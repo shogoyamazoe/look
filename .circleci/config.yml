@@ -13,8 +13,6 @@ jobs:
       - checkout
       - ruby/install-deps
 
-working_directory: ~/look
-
   test:
     parallelism: 3
     docker:
