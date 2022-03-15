@@ -1,0 +1,2 @@
+class GivePerson < ApplicationRecord
+end

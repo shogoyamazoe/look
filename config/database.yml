@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  database: look_dev
+  database: look_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: look_prd
+  database: look_production
   username: look
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>

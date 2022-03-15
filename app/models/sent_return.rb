@@ -1,0 +1,2 @@
+class SentReturn < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class SentPerson < ApplicationRecord
+end

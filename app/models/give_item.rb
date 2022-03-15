@@ -1,0 +1,2 @@
+class GiveItem < ApplicationRecord
+end
