@@ -20,17 +20,17 @@
         </thead>
 
         <tbody>
-          <% @items.each do |item| %>
+          <% @give_items.each do |give_item| %>
           <tr>
-            <td scope="col"><%= link_to item.item_name,item_path(item)%></td>
-            <td scope="col"><%= item.introduction %></td>
-            <td scope="col"><%= item.registration_date %></td>
-            <td scope="col"><%= item.reason %></td>
-            <td scope="col"><%= item.updated_at.to_s(:datetime_jp) %></td>
-            <td scope="col"><%= item.created_at.to_s(:datetime_jp)%></td>
-            <td scope="col"><%= link_to item_path(item) do %>
-              <% if item.item_image? %>
-              <%= image_tag item.item_image.url %>
+            <td scope="col"><%= link_to give_item.give_item_name,give_item_path(give_item)%></td>
+            <td scope="col"><%= give_item.introduction %></td>
+            <td scope="col"><%= give_item.registration_date %></td>
+            <td scope="col"><%= give_item.reason %></td>
+            <td scope="col"><%= give_item.updated_at.to_s(:datetime_jp) %></td>
+            <td scope="col"><%= give_item.created_at.to_s(:datetime_jp)%></td>
+            <td scope="col"><%= link_to give_item_path(give_item) do %>
+              <% if give_item.give_item_image? %>
+              <%= image_tag give_item.give_item_image.url %>
               <% end %>
               <% end %></td>
           </tr>
@@ -41,5 +41,5 @@
     </div>
   </div>
 </div>
-(:give_people_id, :, :, :introduction, :item_name, :user_id, :item_price, :item_genre_id,
-# :item_image)
+(:give_people_id, :, :, :introduction, :give_item_name, :user_id, :give_item_price, :give_item_genre_id,
+# :give_item_image)

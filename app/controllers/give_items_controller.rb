@@ -1,56 +1,43 @@
-class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:search]
+class GiveItemsController < ApplicationController
+  before_action :authenticate_user!, except :[:search]
 
   def index
-    @items = Item.all  
+    @give_items = GiveItem.all
   end
 
   def new
-    @item = Item.new
+    @give_item = GiveItem.new
   end
 
-  
   def create
-    
-    @item = Item.new(item_params)
-    
-    
-    #@item.send_user_id = current_user.id  
-    if @item.save
-      redirect_to item_path(@item)
+    @give_item = GiveItem.new(give_item_params)
+    if @give_item.save
+      redirect_to give_item_path(@give_item)
     else
-      render "new"
+    render 'new'
     end
   end
 
   def show
-    
-    @item = Item.find(params[:id])
-    #if user_signed_in?
+    @give_item = GiveItem.find(params[:id])
     @user = User.find(params[:id])
-    #@item.user_id = current_user.id
-    #end
-    #@postuser = @user.items
-    #@reservation = Reservation.new  
-   
   end
-
 
   def destroy
-    @item = item.find(params[:id])
-    @item.destroy
-    flash[:notice] = "アイテムを削除しました"
-    redirect_to :items
+    @give_item = GiveItem.find(params[:id])
+    @give_item.destroy
+    flash[:notice] = 'アイテムを削除しました'
+    redirect_to :give_items
   end
- 
+
   def postuser
-   @user = current_user
-   @items = @user.items
+    @user = current_user
+    @give_items = @user.give_items
   end
-  
+
   private
-  def item_params
-    params.require(:item).permit(:registration_date, :reason, :introduction, :item_name, :user_id, :item_price, :item_genre_id, :item_image, give_people_attributes:[:give_person_name] ,
-    sent_people_attributes:[:sent_person_name, :_destroy, :id] ) 
+  def give_item_params
+    params.require(:give_item).permit(:registration_date, :reason, :introduction, :give_item_name, :user_id, :give_item_price, :give_item_genre_id, :give_item_image, give_people_attributes:[:give_person_name] ,
+    sent_people_attributes:[:sent_person_name, :_destroy,:id]) 
   end
 end

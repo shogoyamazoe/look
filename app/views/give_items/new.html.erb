@@ -1,24 +1,21 @@
 <div class="container mt-5">
-  <#%= render "shared/error" ,obj: @item %>
+  <#%= render "shared/error" ,obj: @give_item %>
     <% if flash.now[:notice] %>
     <p class="notice"><%= flash.now[:notice] %></p>
     <% end %>
     
     <div class="row">
       <div class="col-100 mx-auto">
-        <h3>Item登録</h3>
+        <h3>give_item登録</h3>
       </div>
     </div>
     <div class="row">
       <div class="col-100 mx-auto">
         <table class="thead-dark">
-          <%= form_with model: @item,local: true do |f| %>
+          <%= form_with model: @give_item,local: true do |f| %>
           <tr>
             <div class="form-group">
-              <th><%= f.label :give_person_name ,"くれた人 : from" %><span class="badge badge-danger">必須</span></th>
-                <%= f.fields_for :give_people do |give_person| %>
-              <td><%= give_person.text_field  :give_person_name, class: "form-control"%></td>
-            <% end %>
+              
             </div>
           </tr>
           <tr>
@@ -29,8 +26,8 @@
             </div>
           </tr>
             <div class="form-group">
-              <th><%= f.label :item_name ,"アイテム名" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.text_field :item_name , class: "form-control"%></td>
+              <th><%= f.label :give_item_name ,"アイテム名" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.text_field :give_item_name , class: "form-control"%></td>
             </div>
           </tr>
           <tr>
@@ -41,8 +38,8 @@
           </tr>
           <tr>
             <div class="form-group">
-              <th><%= f.label :item_price ,"金額" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.number_field :item_price, class: "form-control" %></td>
+              <th><%= f.label :give_item_price ,"金額" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.number_field :give_item_price, class: "form-control" %></td>
             </div>
           </tr>
           <tr>
@@ -53,8 +50,8 @@
           </tr>
           <tr>
             <div class="form-group">
-              <th class="border-bottom"><%= f.label :item_image ,"部屋写真" %><span class="badge badge-danger">必須</span></th>
-              <td class="border-bottom"><%= f.file_field:item_image %> </td>
+              <th class="border-bottom"><%= f.label :give_item_image ,"部屋写真" %><span class="badge badge-danger">必須</span></th>
+              <td class="border-bottom"><%= f.file_field:give_item_image %> </td>
             </div>
           </tr>
         </table>

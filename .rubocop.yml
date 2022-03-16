@@ -5,7 +5,7 @@ Rails:
   Enabled: true
 
 LineLength:
-  Max: 180
+  Max: 220
 
 AllCops:
   Exclude:
@@ -19,6 +19,14 @@ AllCops:
     - '.git/**/*'
     - 'app/helpers/application_helper.rb/'
 
+Airbnb/ModuleMethodInWrongFile:
+  Description: Define a module method in the file that defines the module, not a file that
+    happens to use the module as a namespace.
+  Enabled: false
+  Include:
+    - 'app/**/*'
+    - 'lib/**/*'
+    
 Rails:
   Enabled: true
 
