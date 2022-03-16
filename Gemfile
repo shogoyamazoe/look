@@ -72,3 +72,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'react-rails'
+gem 'font-awesome-sass'
