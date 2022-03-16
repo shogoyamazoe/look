@@ -1,0 +1,66 @@
+<div class="container mt-5">
+  <#%= render "shared/error" ,obj: @item %>
+    <% if flash.now[:notice] %>
+    <p class="notice"><%= flash.now[:notice] %></p>
+    <% end %>
+    
+    <div class="row">
+      <div class="col-100 mx-auto">
+        <h3>Item登録</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-100 mx-auto">
+        <table class="thead-dark">
+          <%= form_with model: @item,local: true do |f| %>
+          <tr>
+            <div class="form-group">
+              <th><%= f.label :give_person_name ,"くれた人 : from" %><span class="badge badge-danger">必須</span></th>
+                <%= f.fields_for :give_people do |give_person| %>
+              <td><%= give_person.text_field  :give_person_name, class: "form-control"%></td>
+            <% end %>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <th><%= f.label :sent_person_name ,"もらった人 :to" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.text_field  :sent_person_name, class: "form-control"%></td>
+            
+            </div>
+          </tr>
+            <div class="form-group">
+              <th><%= f.label :item_name ,"アイテム名" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.text_field :item_name , class: "form-control"%></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <th><%= f.label :reason ,"理由" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.text_field  :reason, class: "form-control"%></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <th><%= f.label :item_price ,"金額" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.number_field :item_price, class: "form-control" %></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <th><%= f.label :registration_date ,"登録日" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.date_field :registration_date, class: "form-control"%></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="form-group">
+              <th class="border-bottom"><%= f.label :item_image ,"部屋写真" %><span class="badge badge-danger">必須</span></th>
+              <td class="border-bottom"><%= f.file_field:item_image %> </td>
+            </div>
+          </tr>
+        </table>
+        <p class="mt-3"><%= f.submit "登録完了" ,class: "btn btn-primary"%></p>
+        <%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%>
+        <% end %>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<h3>アイテム詳細</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <td>
+            <% if @item.item_image? %>
+              <%= image_tag @item.item_iamge.url %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <%# <%binding.pry%>%
+            <%# if @item.user.user_image? %>
+            <img src=<%#= @item.user.user_image %> class="icon_image">
+            <%# else %>
+            <%#= image_tag "/assets/default.png", class: "icon_image" %>
+            <%# end %> %>
+          </td>
+        </tr>
+        <tr>
+          <td class="border-bottom"><%= @item.item_name %></td><br>
+          <td class="border-bottom"><%= @item.item_price%></td>
+        </tr>
+        <tr>
+          <td><%= @item.introduction %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <p><%= "1日あたり  ¥#{@item.item_price} / 日" %></p><br>
+      <%#= form_with model: @reservation, url:new_reservation_path, method: :get ,local: true do |reserv| %>
+      <div class="form-group">
+        <%#= reserv.label :start_day ,"開始日"  %><span class="badge badge-danger">必須</span><br>
+        <%#= reserv.date_field :start_day , class: "form-control" %><br>
+        <%#= reserv.label :end_day ,"終了日" %><span class="badge badge-danger">必須</span><br>
+        <%#= reserv.date_field :end_day , class: "form-control"%><br>
+        <%#= reserv.label :customer,"人数" %><span class="badge badge-danger">必須</span><br>
+        <%#= reserv.number_field :customer, min: 1 , class: "form-control" %><br>
+        <%#= reserv.hidden_field :item_id, value: @item.id %>
+        <%#= reserv.hidden_field :user_id, value: current_user.id %>
+        <p><%#= reserv.submit "予約を確認する" ,class: "btn btn-primary"%></p>
+        <%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%>
+        <%# end %>
+      </div>
+    </div>
+  </div>
+  #(:give_people_id, :iregistration_date, :reason, :introduction, :item_name, :user_id, :item_price, :item_genre_id,
+  :item_image)

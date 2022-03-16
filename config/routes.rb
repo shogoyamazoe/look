@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  get 'sent_items/index'
+  get 'give_items/index'
+  get 'users/index'
   root to: 'tops#index'
   
   devise_for :users, controllers: {

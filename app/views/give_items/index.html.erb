@@ -1,0 +1,45 @@
+<h3>アイテム情報一覧</h3>
+
+<% if flash[:notice] %>
+<p class="notice"><%= flash[:notice] %></p>
+<% end %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-auto mx-5">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ルーム名</th>
+            <th scope="col">ルーム紹介</th>
+            <th scope="col">料金</th>
+            <th scope="col">住所</th>
+            <th scope="col">更新日</th>
+            <th scope="col">作成日</th>
+            <th scope="col">ルーム画像</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @items.each do |item| %>
+          <tr>
+            <td scope="col"><%= link_to item.item_name,item_path(item)%></td>
+            <td scope="col"><%= item.introduction %></td>
+            <td scope="col"><%= item.registration_date %></td>
+            <td scope="col"><%= item.reason %></td>
+            <td scope="col"><%= item.updated_at.to_s(:datetime_jp) %></td>
+            <td scope="col"><%= item.created_at.to_s(:datetime_jp)%></td>
+            <td scope="col"><%= link_to item_path(item) do %>
+              <% if item.item_image? %>
+              <%= image_tag item.item_image.url %>
+              <% end %>
+              <% end %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <p><%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%></p>
+    </div>
+  </div>
+</div>
+(:give_people_id, :, :, :introduction, :item_name, :user_id, :item_price, :item_genre_id,
+# :item_image)
