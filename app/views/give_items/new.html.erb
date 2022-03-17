@@ -19,15 +19,11 @@
             </div>
           </tr>
           <tr>
-            <div class="form-group">
-              <th><%= f.label :sent_person_name ,"もらった人 :to" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.text_field  :sent_person_name, class: "form-control"%></td>
-            
-            </div>
+          
           </tr>
             <div class="form-group">
-              <th><%= f.label :give_item_name ,"アイテム名" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.text_field :give_item_name , class: "form-control"%></td>
+              <th><%= f.label :product ,"アイテム名" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.text_field :product , class: "form-control"%></td>
             </div>
           </tr>
           <tr>
@@ -38,20 +34,20 @@
           </tr>
           <tr>
             <div class="form-group">
-              <th><%= f.label :give_item_price ,"金額" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.number_field :give_item_price, class: "form-control" %></td>
+              <th><%= f.label :price ,"金額" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.number_field :price, class: "form-control" %></td>
             </div>
           </tr>
           <tr>
             <div class="form-group">
-              <th><%= f.label :registration_date ,"登録日" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.date_field :registration_date, class: "form-control"%></td>
+              <th><%= f.label :give_day ,"登録日" %><span class="badge badge-danger">必須</span></th>
+              <td><%= f.date_field :give_day, class: "form-control"%></td>
             </div>
           </tr>
           <tr>
             <div class="form-group">
-              <th class="border-bottom"><%= f.label :give_item_image ,"部屋写真" %><span class="badge badge-danger">必須</span></th>
-              <td class="border-bottom"><%= f.file_field:give_item_image %> </td>
+              <th class="border-bottom"><%= f.label :image ,"写真" %><span class="badge badge-danger">必須</span></th>
+              <td class="border-bottom"><%= f.file_field:image %> </td>
             </div>
           </tr>
         </table>

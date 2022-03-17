@@ -9,6 +9,10 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     env_file: .env
     environment:
+      MYSQL_DATABASE: sample_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: rootpassword
       WEBPACKER_DEV_SERVER_HOST: webpacker
 
   webpacker:

@@ -11,7 +11,8 @@ class GiveItemsController < ApplicationController
 
   def create
     @give_item = GiveItem.new(give_item_params)
-    if @give_item.save
+    @give_item.user_id = current_user.id  
+    if @give_item.save!
       redirect_to give_item_path(@give_item)
     else
     render 'new'
@@ -37,7 +38,6 @@ class GiveItemsController < ApplicationController
 
   private
   def give_item_params
-    params.require(:give_item).permit(:registration_date, :reason, :introduction, :give_item_name, :user_id, :give_item_price, :give_item_genre_id, :give_item_image, give_people_attributes:[:give_person_name] ,
-    sent_people_attributes:[:sent_person_name, :_destroy,:id]) 
+    params.require(:give_item).permit(:user_id, :give_person_id, :family_person_id, :give_item_name, :give_day, :reason, :introduction, :product, :price, :genre_id, :image)
   end
 end

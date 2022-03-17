@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'genres/index'
+  get 'give_persons/index'
+  get 'family_persons/index'
   root to: 'tops#index'
   
   devise_for :users, controllers: {
