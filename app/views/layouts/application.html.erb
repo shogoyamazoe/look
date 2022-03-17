@@ -22,10 +22,10 @@
 
 <header>
   <% if user_signed_in? %>
-  <%= current_user.name %>
   <div class="d-flex justify-content-start bg-info mb-2">
     <div class="ml-auto">
       <div class="dropdown">
+        <i class="fa-regular fa-user"></i> <%= current_user.name %>
         <button id="btnOpenMenu" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="true">
           <% if current_user.image? %>

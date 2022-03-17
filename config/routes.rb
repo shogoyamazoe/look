@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'genres/index'
-  get 'give_persons/index'
-  get 'family_persons/index'
   root to: 'tops#index'
   
   devise_for :users, controllers: {
@@ -16,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :give_items
   resources :sent_items
-  
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :give_persons
+  resources :family_persons
+  resources :genres
 end
