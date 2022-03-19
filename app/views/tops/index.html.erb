@@ -1,3 +1,43 @@
 <h1>items</h1>
 <i class="far fa-clock fa-10x"></i>
-<%= link_to "アイテム登録", new_give_item_path ,class: "btn btn-secondary"%>
+<%= link_to give_items_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
+<i class="fas fa-gift"> gift item</i>
+<% end %>
+<%= link_to new_give_person_path, class: "btn btn-outline-danger rounded-pill", method: :get do %>
+<i class="fa-solid fa-people-group "> presenter </i>
+<% end %>
+<%= link_to new_family_person_path, class: "btn btn-outline-success rounded-pill", method: :get do %>
+<i class=" fa-solid fa-users"> family </i>
+<% end %>
+<%= link_to new_genre_path, class: "btn btn-outline-primary rounded-pill", method: :get do %>
+<i class="fas fa-layer-group"> genre </i>
+<% end %>
+
+
+
+<i class="fas fa-camera-retro"></i>
+<%= link_to  ("URL"), class: "btn btn-primary rounded-circle btn-lg", method: :delete do %>
+<i class="far fa-trash-alt fa-1x"></i>
+<% end %>
+
+<button type="button" class="btn btn-primary rounded-circle p-0" style="width:2rem;height:2rem;">＋</button>
+
+
+
+<i class="fas fa-address-card"></i>
+<i class="fas fa-edit"></i>
+<i class="far fa-edit"></i>
+<i class="fas fa-gifts"></i>
+<i class="fas fa-parachute-box"></i>
+<i class="fas fa-list-ol"></i>
+
+<i class="far fa-image"></i>
+<i class="fas fa-image"></i>
+<i class="fas fa-home"></i>
+<i class="far fa-hand-point-up"></i>
+<th><i class="far fa-file-alt"> text</i></th>
+
+<#%= give_item.introduction %>
+
+    <i class="fas fa-image"> photo</i>
+    <#%= give_item.image %>

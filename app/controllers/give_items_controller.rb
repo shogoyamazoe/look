@@ -21,7 +21,11 @@ class GiveItemsController < ApplicationController
 
   def show
     @give_item = GiveItem.find(params[:id])
-    @user = User.find(params[:id])
+    
+  end
+
+  def edit
+    @give_item = GiveItem.find(params[:id])
   end
 
   def destroy

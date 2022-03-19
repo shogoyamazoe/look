@@ -1,45 +1,61 @@
-<h3>アイテム情報一覧</h3>
-
+<div class="container mt-7">
+  <div class="row">
+    <div class="col-auto mx-7">
+      <h3><i class="fas fa-gifts"> gift index</i></h3>
+    </div>
+  </div>
+</div>
 <% if flash[:notice] %>
 <p class="notice"><%= flash[:notice] %></p>
 <% end %>
-<div class="container mt-5">
+<div class="container">
   <div class="row">
-    <div class="col-auto mx-5">
+    <div class="col-auto">
       <table class="table table-hover">
-        <thead class="thead-dark">
+        <thead>
           <tr>
-            <th scope="col">ルーム名</th>
-            <th scope="col">ルーム紹介</th>
-            <th scope="col">料金</th>
-            <th scope="col">住所</th>
-            <th scope="col">更新日</th>
-            <th scope="col">作成日</th>
-            <th scope="col">ルーム画像</th>
+            <th><i class="fas fa-gifts"> gift</i></th>
+            <th><i class="fa-solid fa-user"> : from</i></th>
+            <th><i class="far fa-user"> : to</i></th>
+            <th><i class="far fa-money-bill-alt"> amount</i></th>
+            <th><i class="far fa-comment-dots"> reason</i></th>
+            <th><i class="far fa-calendar-alt"> date</i></th>
+            <th><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
-
         <tbody>
           <% @give_items.each do |give_item| %>
           <tr>
-            <td scope="col"><%= link_to give_item.give_item_name,give_item_path(give_item)%></td>
-            <td scope="col"><%= give_item.introduction %></td>
-            <td scope="col"><%= give_item.registration_date %></td>
-            <td scope="col"><%= give_item.reason %></td>
-            <td scope="col"><%= give_item.updated_at.to_s(:datetime_jp) %></td>
-            <td scope="col"><%= give_item.created_at.to_s(:datetime_jp)%></td>
-            <td scope="col"><%= link_to give_item_path(give_item) do %>
-              <% if give_item.give_item_image? %>
-              <%= image_tag give_item.give_item_image.url %>
-              <% end %>
+            <td><%= link_to give_item.product,give_item_path(give_item)%></td>
+            <td><%= give_item.give_person.give_person %></td>
+            <td><%= give_item.family_person.family_person %></td>
+            <td><%= give_item.price %></td>
+            <td><%= give_item.reason %></td>
+            <td><%= give_item.give_day %></td>
+            <td><%= give_item.return_item.name %></td>
+            <td>
+              <%= link_to edit_give_item_path(give_item),class: "btn btn-outline-primary, rounded-circle btn-lg", method: :get do %>
+              <i class="far fa-edit"></i>
+              <% end %></td>
+            </td>
+            <td>
+              <%= link_to give_item_path(give_item),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+              <i class="far fa-trash-alt fa-1x"></i>
               <% end %></td>
           </tr>
           <% end %>
         </tbody>
       </table>
-      <p><%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%></p>
+      <p><%= link_to  root_path, class: "btn btn-default rounded-pill" do %>
+        <i class="fas fa-arrow-circle-left"></i>
+        <span>back</span>
+        <% end %>
+        <%= link_to new_give_item_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
+        <i class="fas fa-gift"> register</i>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>
-(:give_people_id, :, :, :introduction, :give_item_name, :user_id, :give_item_price, :give_item_genre_id,
-# :give_item_image)

@@ -5,32 +5,31 @@
       <table>
         <tr>
           <td>
-            <% if @item.item_image? %>
-              <%= image_tag @item.item_iamge.url %>
+            <% if @give_item.image? %>
+            <%= image_tag @give_item.iamge.url %>
             <% end %>
           </td>
         </tr>
         <tr>
           <td>
-          <%# <%binding.pry%>%
-            <%# if @item.user.user_image? %>
-            <img src=<%#= @item.user.user_image %> class="icon_image">
-            <%# else %>
-            <%#= image_tag "/assets/default.png", class: "icon_image" %>
-            <%# end %> %>
+            <% if @give_item.user.image? %>
+            <img src=<%= @give_item.user.image %> class="icon_image">
+            <% else %>
+            <%= image_tag "/assets/default.png", class: "icon_image" %>
+            <% end %> %>
           </td>
         </tr>
         <tr>
-          <td class="border-bottom"><%= @item.item_name %></td><br>
-          <td class="border-bottom"><%= @item.item_price%></td>
+          <td class="border-bottom"><%= @give_item.product %></td><br>
+          <td class="border-bottom"><%= @give_item.price%></td>
         </tr>
         <tr>
-          <td><%= @item.introduction %></td>
+          <td><%= @give_item.introduction %></td>
         </tr>
       </table>
     </div>
     <div class="col-md-6">
-      <p><%= "1日あたり  ¥#{@item.item_price} / 日" %></p><br>
+      <p><%= "1日あたり  ¥#{@give_item.price} / 日" %></p><br>
       <%#= form_with model: @reservation, url:new_reservation_path, method: :get ,local: true do |reserv| %>
       <div class="form-group">
         <%#= reserv.label :start_day ,"開始日"  %><span class="badge badge-danger">必須</span><br>
@@ -39,7 +38,7 @@
         <%#= reserv.date_field :end_day , class: "form-control"%><br>
         <%#= reserv.label :customer,"人数" %><span class="badge badge-danger">必須</span><br>
         <%#= reserv.number_field :customer, min: 1 , class: "form-control" %><br>
-        <%#= reserv.hidden_field :item_id, value: @item.id %>
+        <%#= reserv.hidden_field :item_id, value: @give_item.id %>
         <%#= reserv.hidden_field :user_id, value: current_user.id %>
         <p><%#= reserv.submit "予約を確認する" ,class: "btn btn-primary"%></p>
         <%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%>

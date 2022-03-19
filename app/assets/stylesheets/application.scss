@@ -23,9 +23,9 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
-.icon_image{
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
+.icon_image {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
   object-fit: cover;
 }
