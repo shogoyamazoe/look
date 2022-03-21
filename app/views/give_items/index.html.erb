@@ -34,7 +34,14 @@
             <td><%= give_item.price %></td>
             <td><%= give_item.reason %></td>
             <td><%= give_item.give_day %></td>
-            <td><%= give_item.return_item.name %></td>
+            <td>
+              <%  give_item %>
+              <p>インスタンスメソッド作って対応</p>
+
+              <%= link_to new_give_return_path(give_item), class: "btn btn-outline-warning rounded-pill", method: :get do %>
+
+              <i class="fas fa-gift"> return item</i>
+              <% end %>
             <td>
               <%= link_to edit_give_item_path(give_item),class: "btn btn-outline-primary, rounded-circle btn-lg", method: :get do %>
               <i class="far fa-edit"></i>

@@ -1,0 +1,53 @@
+<h3>アイテム詳細</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <td>
+
+            <% if @give_return.image? %>
+            <%= image_tag @give_return.iamge.url %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+
+            <% if @give_return.image? %>
+            <img src=<%= @give_return.image %> class="icon_image">
+            <% else %>
+            <%= image_tag "/assets/default.png", class: "icon_image" %>
+            <% end %> %>
+          </td>
+        </tr>
+        <tr>
+          <td class="border-bottom"><%= @give_return.product %></td><br>
+          <td class="border-bottom"><%= @give_return.price%></td>
+        </tr>
+        <tr>
+          <td><%= @give_return.introduction %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <p><%= "1日あたり  ¥#{@give_return.price} / 日" %></p><br>
+      <%#= form_with model: @reservation, url:new_reservation_path, method: :get ,local: true do |reserv| %>
+      <div class="form-group">
+        <%#= reserv.label :start_day ,"開始日"  %><span class="badge badge-danger">必須</span><br>
+        <%#= reserv.date_field :start_day , class: "form-control" %><br>
+        <%#= reserv.label :end_day ,"終了日" %><span class="badge badge-danger">必須</span><br>
+        <%#= reserv.date_field :end_day , class: "form-control"%><br>
+        <%#= reserv.label :customer,"人数" %><span class="badge badge-danger">必須</span><br>
+        <%#= reserv.number_field :customer, min: 1 , class: "form-control" %><br>
+        <%#= reserv.hidden_field :return_id, value: @give_return.id %>
+        <%#= reserv.hidden_field :user_id, value: current_user.id %>
+        <p><%#= reserv.submit "予約を確認する" ,class: "btn btn-primary"%></p>
+        <%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%>
+        <%# end %>
+      </div>
+    </div>
+  </div>
+  #(:give_people_id, :iregistration_date, :reason, :introduction, :return_name, :user_id, :return_price,
+  :return_genre_id,
+  :return_image)

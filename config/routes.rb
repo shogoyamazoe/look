@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :give_items
+  resources :give_returns
   resources :sent_items
+  resources :sent_returns
   resources :give_persons
   resources :family_persons
   resources :genres

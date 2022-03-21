@@ -4,4 +4,8 @@ class GiveItem < ApplicationRecord
   belongs_to :family_person
   belongs_to :user
   belongs_to :genre
+
+  def have_return?
+    give_return.exists?
+  end
 end
