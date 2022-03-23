@@ -6,76 +6,7 @@
 
     <div class="row">
       <div class="col-100 mx-auto">
-        <h3>give_item登録</h3>
+        <h3>give_item edit</h3>
       </div>
     </div>
-    <div class="row">
-      <div class="col-100 mx-auto">
-        <table class="thead-dark">
-          <%= form_with model: @give_item,local: true do |f| %>
-          <tr>
-            <div class="form-group">
-              <th f.label :give_person_id, style="width: auto"><i class="fa-solid fa-user"> presenter</i></th>
-              <th><span class="badge badge-danger"> required</span></th>
-              <td>
-                <%= f.collection_select :give_person_id, GivePerson.all, :id, :give_person, {include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
-              </td>
-            </div>
-          </tr>
-          <tr>
-            <div class="form-group">
-              <th><%= f.label :family_person_id ,"もらった人" %><span class="badge badge-danger">必須</span></th>
-              <td>
-                <%= f.collection_select :family_person_id, FamilyPerson.all, :id, :family_person,{include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
-              </td>
-            </div>
-          </tr>
-          <tr>
-            <div class="form-group">
-              <th><%= f.label :genre_id ,"分類" %><span class="badge badge-danger">必須</span></th>
-              <td>
-                <%= f.collection_select :genre_id, Genre.all, :id, :genre,{include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
-              </td>
-            </div>
-          </tr>
-          <div class="form-group">
-            <th><%= f.label :product ,"アイテム名" %><span class="badge badge-danger">必須</span></th>
-            <td><%= f.text_field :product , class: "form-control"%></td>
-          </div>
-          </tr>
-          <tr>
-            <div class="form-group">
-              <th><%= f.label :reason ,"理由" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.text_field  :reason, class: "form-control"%></td>
-            </div>
-          </tr>
-          <tr>
-            <div class="form-group">
-              <th><%= f.label :price ,"金額" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.number_field :price, class: "form-control" %></td>
-            </div>
-          </tr>
-          <tr>
-            <div class="form-group">
-              <th><%= f.label :give_day ,"登録日" %><span class="badge badge-danger">必須</span></th>
-              <td><%= f.date_field :give_day, class: "form-control"%></td>
-            </div>
-          </tr>
-          <tr>
-            <div class="form-group">
-              <th class="border-bottom"><%= f.label :image %>
-                <i class="fas fa-gifts"> gift</i><span class="badge badge-danger">必須</span>
-              </th>
-              <td class="border-bottom"><%= f.file_field:image %> </td>
-            </div>
-          </tr>
-        </table>
-        <%= link_to  ("URL"), class: "btn btn-danger text-white", method: :delete do %>
-        <i class="far fa-trash-alt"></i>
-        <% end %>
-        <p class="mt-3"><%= f.submit "登録完了" ,class: "btn btn-primary"%></p>
-        <%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%>
-        <% end %>
-      </div>
-    </div>
-</div>
+    <%= render "give_items/form" %>

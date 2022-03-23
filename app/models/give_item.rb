@@ -6,6 +6,6 @@ class GiveItem < ApplicationRecord
   belongs_to :genre
 
   def have_return?
-    give_return.exists?
+    give_returns.exists?
   end
 end
