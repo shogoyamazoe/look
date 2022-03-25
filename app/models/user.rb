@@ -3,5 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :give_items, dependent: :destroy
+  has_many :give_returns, dependent: :destroy
   has_many :sent_items, dependent: :destroy
+  has_many :sent_returns, dependent: :destroy
 end

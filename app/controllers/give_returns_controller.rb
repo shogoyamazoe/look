@@ -14,6 +14,7 @@ class GiveReturnsController < ApplicationController
 
   def create
     @give_return = GiveReturn.new(give_return_params)
+    @give_return.user_id = current_user.id
     if @give_return.save!
       redirect_to give_return_path(@give_return)
     else

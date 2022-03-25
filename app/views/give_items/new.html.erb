@@ -3,10 +3,6 @@
     <% if flash.now[:notice] %>
     <p class="notice"><%= flash.now[:notice] %></p>
     <% end %>
-    <div class="row">
-      <div class="col-100 mx-auto">
-        <i class="fas fa-gift fa-3x"> gift</i>
-      </div>
-    </div>
-    <%= render "give_items/form" %>
+    <i class="fas fa-gift fa-3x"> gift</i>
 </div>
+<%= render "give_items/form" %>
