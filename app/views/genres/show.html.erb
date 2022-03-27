@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <th>
+            <div class="m-3">
+              <i class="fas fa-layer-group fa-2x"> genre : </i>
+            </div>
+          </th>
+          <td>
+            <h3><%= @genre.genre%></h3>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="d-grid gap-3">
+            <table class="table table-hover">
+              <% @genres.each_with_index do |genre_give_item,i| %>
+              <thead class="table-warning">
+                <tr>
+                  <th>ITEM No. <%=i+1%></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tr>
+                <th class="border-bottom style=width 50%"><i class="fas fa-gifts"> gift</i></th>
+                <td class="border-bottom"><%= genre_give_item.product%></td>
+              </tr>
+              <tr>
+                <th><i class="fa-solid fa-user"> : from</i></th>
+                <td><%= genre_give_item.give_person.give_person %></td>
+              </tr>
+              <tr>
+                <th><i class="far fa-user"> : to</i></th>
+                <td><%= genre_give_item.family_person.family_person %></td>
+              </tr>
+              <tr>
+                <th class="border-bottom"><i class="far fa-money-bill-alt"> amount</i></th>
+                <td class="border-bottom"><%= genre_give_item.price %></td>
+              </tr>
+              <tr>
+                <th><i class="far fa-comment-dots"> reason</i></th>
+                <td class="border-bottom"><%= genre_give_item.reason %></td>
+              </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+        <div class="container">
+          <p>
+            <%= link_to  give_items_path, class: "btn btn-default rounded-pill" do %>
+            <i class="fas fa-arrow-circle-left"></i>
+            <span>back</span>
+            <% end %>
+            <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
+            <i class="fas fa-home"> home</i>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

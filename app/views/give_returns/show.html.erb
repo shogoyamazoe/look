@@ -15,12 +15,12 @@
         <tr>
           <td>
             <div class="mx-3">
-              <% if @give_return.give_item.user.image? %>
-              <img src=<%= @give_return.give_item.user.image %> class="icon_image">
+              <% if @give_return.user.image? %>
+              <img src=<%= @give_return.user.image %> class="icon_image">
               <% else %>
               <%= image_tag "/assets/default.png", class: "icon_image" %>
               <% end %>
-              <%= @give_return.give_item.user.name %>
+              <%= @give_return.user.name %>
             </div>
           </td>
         </tr>

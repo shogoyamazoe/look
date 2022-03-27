@@ -1,14 +1,16 @@
 <div class="row">
-  <div class="col-100 mx-auto">
+  <div class="col mx-3 ">
     <table class="thead-dark">
       <%= form_with model: @give_item,local: true do |f| %>
-      <tr class="mb-5">
+      <tr class="col-xs-2">
         <div class="form-group">
           <th style="width: 30%"><i class="fas fa-gifts"> gift</i></th>
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 65%"><%= f.text_field :product , class: "form-control"%></td>
+          <div class="col-md-2">
+            <td style="width: 65%"><%= f.text_field :product , class: "form-control sise="30"%></td>
+          </div>
         </div>
       </tr>
       <tr>

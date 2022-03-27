@@ -20,13 +20,13 @@ class GenresController < ApplicationController
 
   def show
     @genre = Genre.find(params[:id])
-    @user = User.find(params[:id])
+    @genres = @genre.give_items.all
   end
 
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
-    flash[:notice] = '家族情報削除しました'
+    flash[:notice] = '分類情報削除しました'
     redirect_to :genres
   end
 

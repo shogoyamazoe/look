@@ -45,6 +45,6 @@ class GiveReturnsController < ApplicationController
 
   private
   def give_return_params
-    params.require(:give_return).permit(:give_item_id, :return_day, :introduction, :product, :price, :genre_id, :image)
+    params.require(:give_return).permit(:give_item_id, :return_day, :introduction, :product, :price, :genre_id, :image, :user_id)
   end
 end

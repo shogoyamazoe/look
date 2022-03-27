@@ -21,67 +21,69 @@
       <div class="d-grid gap-3">
         <table class="table table-hover">
           <% @give_items.each_with_index do |give_item,i| %>
-          <thead>
+          <thead class="table-warning">
             <tr>
-              <th class="table-warning">ITEM No. <%=i+1%></th>
-              <td class="table-warning"></td>
+              <th>ITEM No. <%=i+1%></th>
+              <th></th>
             </tr>
-            <tr>
-              <th><i class="fas fa-gifts"> gift</i></th>
-              <td><%= link_to give_item.product,give_item_path(give_item)%></td>
-            </tr>
-            <tr>
-              <th><i class="fa-solid fa-user"> : from</i></th>
-              <td><%= give_item.give_person.give_person %></td>
-            </tr>
-            <tr>
-              <th><i class="far fa-user"> : to</i></th>
-              <td><%= give_item.family_person.family_person %></td>
-            </tr>
-            <tr>
-              <th><i class="far fa-money-bill-alt"> amount</i></th>
-              <td><%= give_item.price %></td>
-            </tr>
-            <tr>
-              <th><i class="far fa-comment-dots"> reason</i></th>
-              <td><%= give_item.reason %></td>
-            </tr>
-            <tr>
-              <th><i class="far fa-calendar-alt"> date</i></th>
-              <td><%= give_item.give_day %></td>
-            </tr>
-            <tr>
-              <th><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
-              <td>
-                <% if give_item.have_return? %>
-                <%= link_to give_item.give_returns[0].product,give_return_path(give_item.give_returns[0]) %>
-                <% else %>
-                <%= link_to new_give_return_path(give_item), class: "btn btn-outline-warning rounded-pill", method: :get do %>
-                <i class="fas fa-gift"> return item</i>
-                <% end %>
-                <% end %>
-              </td>
-            </tr>
-            <tr>
-              <th><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return amount</i></th>
-              <td>
-                <% if give_item.have_return? %>
-                <%= give_item.give_returns[0].price %>
-                <% end %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <%= link_to edit_give_item_path(give_item),class: "btn btn-outline-primary, rounded-circle btn-lg", method: :get do %>
-                <i class="far fa-edit"></i>
-                <% end %></td>
-              </td>
-              <td>
-                <%= link_to give_item_path(give_item),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
-                <i class="far fa-trash-alt fa-1x"></i>
-                <% end %></td>
-            </tr>
+          </thead>
+          <tr>
+            <th><i class="fas fa-gifts"> gift</i></th>
+            <td><%= link_to give_item.product,give_item_path(give_item)%></td>
+          </tr>
+          <tr>
+            <th><i class="fa-solid fa-user"> : from</i></th>
+            <td><%= give_item.give_person.give_person %></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-user"> : to</i></th>
+            <td><%= give_item.family_person.family_person %></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-money-bill-alt"> amount</i></th>
+            <td><%= give_item.price %></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-comment-dots"> reason</i></th>
+            <td><%= give_item.reason %></td>
+          </tr>
+          <tr>
+            <th><i class="far fa-calendar-alt"> date</i></th>
+            <td><%= give_item.give_day %></td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
+            <td>
+              <% if give_item.have_return? %>
+              <%= link_to give_item.give_returns[0].product,give_return_path(give_item.give_returns[0]) %>
+              <% else %>
+              <%= link_to new_give_return_path(give_item), class: "btn btn-outline-warning rounded-pill", method: :get do %>
+              <i class="fas fa-gift"> return item</i>
+              <% end %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return amount</i></th>
+            <td>
+              <% if give_item.have_return? %>
+              <%= give_item.give_returns[0].price %>
+              <% else %>
+              <p>no return amount</p>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to edit_give_item_path(give_item),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
+              <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to give_item_path(give_item),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+              <i class="far fa-trash-alt fa-1x"></i>
+              <% end %></td>
             <% end %>
+            <td></td>
+          </tr>
         </table>
         <p><%= link_to  root_path, class: "btn btn-default rounded-pill" do %>
           <i class="fas fa-arrow-circle-left"></i>
