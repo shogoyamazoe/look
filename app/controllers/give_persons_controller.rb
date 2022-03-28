@@ -20,7 +20,7 @@ class GivePersonsController < ApplicationController
 
   def show
     @give_person = GivePerson.find(params[:id])
-    @user = User.find(params[:id])
+    @give_persons = @give_person.give_items.all
   end
 
   def destroy

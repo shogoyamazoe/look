@@ -1,35 +1,62 @@
-<h3>くれた人一覧</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-auto">
+      <h3><i class="fa-solid fa-user"> Presenter index</i></h3>
+    </div>
+  </div>
+  <div class="text-right">
+    <p>
+      <%= link_to new_give_person_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
+      <i class="fa-solid fa-user"> new</i>
+      <% end %>
+    </p>
+  </div>
+</div>
 <% if flash[:notice] %>
 <p class="notice"><%= flash[:notice] %></p>
 <% end %>
-<div class="container mt-5">
+<div class="container">
   <div class="row">
-    <div class="col-auto mx-5">
-      <table class="table table-hover">
-        <thead class="thead-dark">
+    <div class="col">
+      <div class="d-grid gap-3">
+        <table class="table table-hover">
+          <% @give_persons.each_with_index do |give_person,i| %>
+          <thead class="table-warning">
+            <tr>
+              <th>Presenter No. <%=i+1%></th>
+              <th></th>
+            </tr>
+          </thead>
           <tr>
-            <th scope="col">名前</th>
-            <th scope="col">つながり</th>
-            <th scope="col">登録日</th>
+            <th><i class="fa-solid fa-user"> name</i></th>
+            <td><%= link_to give_person.give_person,give_person_path(give_person)%></td>
           </tr>
-        </thead>
-        <tbody>
-
-          <% @give_persons.each do |give_person| %>
           <tr>
-            <td scope="col"><%= link_to give_person.give_person,give_person_path(give_person)%></td>
-            <td scope="col"><%= give_person.involvement %></td>
-            <td scope="col"><%= give_person.created_at.to_s(:date_jp)%></td>
+            <th><i class="far fa-handshake"> Connection</i></th>
+            <td><%= give_person.involvement %></td>
           </tr>
+          <tr>
+            <th><i class="far fa-calendar-check"></i> Registration date</th>
+            <td><%= give_person.created_at.to_s(:date_jp)%></td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to edit_give_person_path(give_person),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
+              <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to give_person_path(give_person),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+              <i class="far fa-trash-alt fa-1x"></i>
+              <% end %></td>
+            <% end %>
+            <td></td>
+          </tr>
+        </table>
+        <p><%= link_to  root_path, class: "btn btn-default rounded-pill" do %>
+          <i class="fas fa-arrow-circle-left"></i>
+          <span>back</span>
           <% end %>
-
-        </tbody>
-      </table>
-      <p><%= link_to  root_path, class: 'btn btn-default' do %>
-        <i class="fas fa-arrow-circle-left"></i>
-        <span>戻る</span>
-        <% end %>
-      </p>
+        </p>
+      </div>
     </div>
   </div>
 </div>
