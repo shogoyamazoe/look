@@ -23,6 +23,10 @@ class GivePersonsController < ApplicationController
     @give_persons = @give_person.give_items.all
   end
 
+   def edit
+    @give_person = GivePerson.find(params[:id])
+  end
+
   def destroy
     @give_person = GivePerson.find(params[:id])
     @give_person.destroy

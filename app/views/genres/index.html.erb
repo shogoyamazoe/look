@@ -22,10 +22,20 @@
         <table class="table table-hover">
           <thead class="table-warning">
             <th><i class="fas fa-layer-group"> genre</i></th>
+            <th></th>
           </thead>
           <% @genres.each do |genre| %>
           <tr>
             <td><%= link_to genre.genre,genre_path(genre)%></td>
+            <td>
+              <div class="d-flex justify-content-end">
+                <%= link_to edit_genre_path(genre),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
+                <i class="far fa-edit"></i>
+                <% end %>
+                <%= link_to genre_path(genre),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+                <i class="far fa-trash-alt fa-1x"></i>
+                <% end %>
+            </td>
           </tr>
           <% end %>
         </table>
@@ -37,4 +47,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

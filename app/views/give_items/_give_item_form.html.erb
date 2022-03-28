@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col mx-3 ">
+  <div class="col mx-3">
     <table class="thead-dark">
       <%= form_with model: @give_item,local: true do |f| %>
       <tr class="col-xs-2">
@@ -9,7 +9,7 @@
             <div class="badge badge-danger"> required</div>
           </th>
           <div class="col-md-2">
-            <td style="width: 65%"><%= f.text_field :product , class: "form-control sise="30"%></td>
+            <td style="width: 65%"><%= f.text_field :product , class: "form-control"%></td>
           </div>
         </div>
       </tr>

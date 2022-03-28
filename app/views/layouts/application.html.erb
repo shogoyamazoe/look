@@ -15,50 +15,50 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script>
-
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
 </head>
-
 <header>
-  <% if user_signed_in? %>
-  <div class="d-flex justify-content-start mb-2">
-    <div class="ml-auto">
-      <div class="dropdown">
-        <i class="fas fa-child"></i> <%= current_user.name %>
-        <button id="btnOpenMenu" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="true">
-          <% if current_user.image? %>
-          <img src=<%= current_user.image %> class="icon_image">
-          <% else %>
-          <%= image_tag "/assets/default.png", class: "icon_image" %>
-          <% end %>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="btnOpenMenu">
-          <li>
-            <a class="dropdown-item" href="#"><%= link_to "設定", user_path(current_user), class: "nav-link"%></a>
-          </li>
-          <li>
-            <a class="dropdown-item"
-              href="#"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: "nav-link"%></a>
-          </li>
-        </ul>
-      </div>
-      <% else %>
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to 'give__sent', root_path, class: "navbar-brand" %>
+    <% if user_signed_in? %>
+    <div class="d-flex justify-content-start mb-2">
       <div class="ml-auto">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%= link_to '新規登録', new_user_registration_path ,class: "btn btn-primary"%>
-          </li>
-          <div class="ml-1">
-            <li class="nav-item">
-              <%= link_to 'ログイン', new_user_session_path ,class: "btn btn-secondary"%>
+        <div class="dropdown">
+          <i class="fas fa-child"></i> <%= current_user.name %>
+          <button id="btnOpenMenu" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true">
+            <% if current_user.image? %>
+            <img src=<%= current_user.image %> class="icon_image">
+            <% else %>
+            <%= image_tag "/assets/default.png", class: "icon_image" %>
+            <% end %>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="btnOpenMenu">
+            <li>
+              <a class="dropdown-item" href="#"><%= link_to "設定", user_path(current_user), class: "nav-link"%></a>
             </li>
-        </ul>
+            <li>
+              <a class="dropdown-item"
+                href="#"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: "nav-link"%></a>
+            </li>
+          </ul>
+        </div>
+        <% else %>
+        <div class="collapse navbar-collapse" id="Navber">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
-  </div>
+  </nav>
 </header>
 <% if flash[:notice] %>
 <div class="alert alert-primary" role="alert"><strong><%= notice %></strong></div>

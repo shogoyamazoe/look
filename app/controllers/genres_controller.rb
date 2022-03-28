@@ -23,6 +23,10 @@ class GenresController < ApplicationController
     @genres = @genre.give_items.all
   end
 
+  def edit
+    @genre = Genre.find(params[:id])
+  end
+
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
