@@ -1,6 +1,5 @@
 class FamilyPersonsController < ApplicationController
- 
-
+  
   def index
     @family_persons = FamilyPerson.all
   end
@@ -18,9 +17,22 @@ class FamilyPersonsController < ApplicationController
     end
   end
 
+  def edit
+    @family_person = FamilyPerson.find(params[:id])
+  end
+
   def show
     @family_person = FamilyPerson.find(params[:id])
-    @user = User.find(params[:id])
+    @family_persons = @family_person.give_items.all
+  end
+
+  def update
+    @family_person = FamilyPerson.find(params[:id])
+    if @family_person.update(family_person_params)
+      redirect_to family_persons_path
+    else
+    render 'new'
+    end
   end
 
   def destroy
@@ -39,6 +51,4 @@ class FamilyPersonsController < ApplicationController
   def family_person_params
     params.require(:family_person).permit(:family_person)
   end
-
-
 end

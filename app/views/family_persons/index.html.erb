@@ -1,25 +1,52 @@
-<h3>家族一覧</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-auto">
+      <h3><i class=" fa-solid fa-users"> family index</i></h3>
+    </div>
+  </div>
+  <div class="text-right">
+    <p>
+      <%= link_to new_family_person_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
+      <i class=" fa-solid fa-users"> new</i>
+      <% end %>
+    </p>
+  </div>
+</div>
 <% if flash[:notice] %>
 <p class="notice"><%= flash[:notice] %></p>
 <% end %>
-<div class="container mt-5">
+<div class="container">
   <div class="row">
-    <div class="col-auto mx-5">
-      <table class="table table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">名前</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div class="col">
+      <div class="d-grid gap-3">
+        <table class="table table-hover">
+          <thead class="table-warning">
+            <th><i class=" fa-solid fa-users"> family</i>
+            </th>
+            <th></th>
+          </thead>
           <% @family_persons.each do |family_person| %>
           <tr>
-            <td scope="col"><%= link_to family_person.family_person,family_person_path(family_person)%></td>
+            <td><%= link_to family_person.family_person,family_person_path(family_person)%></td>
+            <td>
+              <div class="d-flex justify-content-end">
+                <%= link_to edit_family_person_path(family_person),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
+                <i class="far fa-edit"></i>
+                <% end %>
+                <%= link_to family_person_path(family_person),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+                <i class="far fa-trash-alt fa-1x"></i>
+                <% end %>
+            </td>
           </tr>
           <% end %>
-        </tbody>
-      </table>
-      <p><%= link_to "ホームへ戻る", root_path ,class: "btn btn-secondary"%></p>
+        </table>
+        <p><%= link_to  root_path, class: "btn btn-default rounded-pill" do %>
+          <i class="fas fa-arrow-circle-left"></i>
+          <span>back</span>
+          <% end %>
+        </p>
+      </div>
     </div>
   </div>
+</div>
 </div>

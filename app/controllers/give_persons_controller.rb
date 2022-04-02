@@ -27,6 +27,15 @@ class GivePersonsController < ApplicationController
     @give_person = GivePerson.find(params[:id])
   end
 
+    def update
+    @give_person = GivePerson.find(params[:id])
+    if @give_person.update(give_person_params)
+      redirect_to give_persons_path
+    else
+    render 'new'
+    end
+  end
+  
   def destroy
     @give_person = GivePerson.find(params[:id])
     @give_person.destroy

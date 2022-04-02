@@ -1,5 +1,4 @@
 class GenresController < ApplicationController
- 
 
   def index
     @genres = Genre.all
@@ -27,6 +26,15 @@ class GenresController < ApplicationController
     @genre = Genre.find(params[:id])
   end
 
+  def update
+    @genre = Genre.find(params[:id])
+    if @genre.update(genre_params)
+      redirect_to genres_path
+    else
+    render 'new'
+    end
+  end
+  
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
@@ -43,7 +51,4 @@ class GenresController < ApplicationController
   def genre_params
     params.require(:genre).permit(:genre)
   end
-
-
-
 end
