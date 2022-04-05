@@ -1,6 +1,13 @@
 // Place all the styles related to the GiveItems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.item_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
 .money_image {
     width: 200px;
     height: 200px;

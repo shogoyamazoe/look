@@ -1,4 +1,7 @@
 class SentItem < ApplicationRecord
+
+  mount_uploader :image, ImageUploader
+
   has_many :sent_returns, dependent: :destroy
   belongs_to :sent_person
   belongs_to :family_person

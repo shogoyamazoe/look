@@ -1,4 +1,7 @@
 class GiveItem < ApplicationRecord
+
+  mount_uploader :image, ImageUploader
+
   has_many :give_returns, dependent: :destroy
   belongs_to :give_person
   belongs_to :family_person

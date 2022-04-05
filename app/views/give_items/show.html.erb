@@ -16,7 +16,9 @@
           <td>
             <div class="mx-3">
               <% if @give_item.user.image? %>
-              <img src=<%= @give_item.user.image %> class="icon_image">
+              <div class="item_image">
+                <img src=<%= @give_item.user.image %>>
+              </div>
               <% else %>
               <%= image_tag "/assets/default.png", class: "icon_image" %>
               <% end %>
@@ -28,7 +30,7 @@
           <td>
             <div class="m-5">
               <% if @give_item.image? %>
-              <%= image_tag @give_item.iamge.url %>
+              <%= image_tag @give_item.image.url %>
               <% elsif @give_item.genre.genre == "お金" %>
               <%= image_tag "/assets/money001.png", class: "money_image" %>
               <% else %>
