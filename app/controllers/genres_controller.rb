@@ -1,4 +1,5 @@
 class GenresController < ApplicationController
+  before_action :authenticate_user!, except:[:search]
 
   def index
     @genres = Genre.all

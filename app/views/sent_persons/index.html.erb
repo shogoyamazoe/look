@@ -36,10 +36,6 @@
             <td><%= sent_person.involvement %></td>
           </tr>
           <tr>
-            <th><i class="far fa-calendar-check"> date</i></th>
-            <td><%= sent_person.created_at.to_s(:datetime_jp)%></td>
-          </tr>
-          <tr>
             <td>
               <%= link_to edit_sent_person_path(sent_person),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
               <i class="far fa-edit"></i>
@@ -47,9 +43,9 @@
               <%= link_to sent_person_path(sent_person),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
               <i class="far fa-trash-alt fa-1x"></i>
               <% end %></td>
-            <% end %>
             <td></td>
           </tr>
+          <% end %>
         </table>
         <p><%= link_to  root_path, class: "btn btn-default rounded-pill" do %>
           <i class="fas fa-arrow-circle-left"></i>

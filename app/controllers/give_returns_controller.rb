@@ -1,5 +1,4 @@
 class GiveReturnsController < ApplicationController
-
   before_action :authenticate_user!, except:[:search]
 
   def index

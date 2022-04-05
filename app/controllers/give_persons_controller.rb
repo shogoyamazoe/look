@@ -1,5 +1,5 @@
 class GivePersonsController < ApplicationController
- 
+  before_action :authenticate_user!, except:[:search]
 
   def index
     @give_persons = GivePerson.all
