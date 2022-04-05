@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .money_image {
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.present_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
     object-fit: cover;
 }

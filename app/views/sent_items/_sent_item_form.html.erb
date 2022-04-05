@@ -15,7 +15,18 @@
       </tr>
       <tr>
         <div class="form-group">
-          <th style="width: 30%"><i class="fa-solid fa-user"> senter</i></th>
+          <th style="width: 30%"><i class="far fa-user"> : from</th>
+          <th style="width: 5%">
+            <div class="badge badge-danger"> required</div>
+          </th>
+          <td style="width: 65%">
+            <%= f.collection_select :family_person_id, FamilyPerson.all, :id, :family_person,{include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
+          </td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <th style="width: 30%"><i class="fa-solid fa-user"> : to</i></th>
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>

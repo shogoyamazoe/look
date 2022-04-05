@@ -51,6 +51,6 @@ class SentItemsController < ApplicationController
 
   private
   def sent_item_params
-    params.require(:sent_item).permit(:user_id, :sent_person_id, :family_person_id, :sent_item_name, :sent_day, :reason, :introduction, :product, :price, :genre_id, :image)
+    params.require(:sent_item).permit(:user_id, :sent_person_id, :family_person_id, :sent_day, :reason, :introduction, :product, :price, :genre_id, :image)
   end
 end

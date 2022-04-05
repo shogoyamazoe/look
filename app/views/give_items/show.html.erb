@@ -31,6 +31,8 @@
               <%= image_tag @give_item.iamge.url %>
               <% elsif @give_item.genre.genre == "お金" %>
               <%= image_tag "/assets/money001.png", class: "money_image" %>
+              <% else %>
+              <%= image_tag "/assets/present.png", class: "present_image" %>
               <% end %>
             </div>
           </td>
