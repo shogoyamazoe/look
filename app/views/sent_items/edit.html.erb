@@ -1,11 +1,9 @@
 <div class="container">
   <div class="row">
-
-    <#%= render "shared/error" ,obj: @sent_item %>
-      <% if flash.now[:notice] %>
-      <p class="notice"><%= flash.now[:notice] %></p>
-      <% end %>
-      <h3>sent_item edit</h3>
+    <% if flash.now[:notice] %>
+    <p class="notice"><%= flash.now[:notice] %></p>
+    <% end %>
+    <h3>sent_item edit</h3>
   </div>
 </div>
 <%= render "sent_items/sent_item_form" %>

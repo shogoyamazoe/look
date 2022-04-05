@@ -16,9 +16,7 @@
           <td>
             <div class="mx-3">
               <% if @give_item.user.image? %>
-              <div class="item_image">
-                <img src=<%= @give_item.user.image %>>
-              </div>
+              <img src=<%= @give_item.user.image %> class="icon_image">
               <% else %>
               <%= image_tag "/assets/default.png", class: "icon_image" %>
               <% end %>

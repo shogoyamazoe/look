@@ -4,7 +4,7 @@ class GiveItemsController < ApplicationController
   def index
     @give_items = GiveItem.all
   end
-
+  
   def new
     @give_item = GiveItem.new
   end

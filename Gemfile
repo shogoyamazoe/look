@@ -74,3 +74,5 @@ gem 'mini_magick'
 
 gem 'react-rails'
 gem 'font-awesome-sass'
+
+gem 'kaminari'
