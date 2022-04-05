@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :give_items
   resources :give_returns
   resources :sent_items
+  resources :sent_persons
   resources :sent_returns
   resources :give_persons
   resources :family_persons

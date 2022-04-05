@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <th>
+            <div class="m-3">
+              <i class="fa-solid fa-user fa-2x"> Senter : </i>
+            </div>
+          </th>
+          <td>
+            <h3><%= @sent_person.sent_person%></h3>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="d-grid gap-3">
+            <table class="table table-hover">
+              <% @sent_persons.each_with_index do |sent_person_sent_item,i| %>
+              <thead class="table-warning">
+                <tr>
+                  <th>ITEM No. <%=i+1%></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tr>
+                <th class="border-bottom style=width 50%"><i class="fas fa-gifts"> gift</i></th>
+                <td class="border-bottom"><%= sent_person_sent_item.product%></td>
+              </tr>
+              <tr>
+                <th class="border-bottom"><i class="far fa-money-bill-alt"> amount</i></th>
+                <td class="border-bottom"><%= sent_person_sent_item.price %></td>
+              </tr>
+              <tr>
+                <th><i class="far fa-comment-dots"> reason</i></th>
+                <td class="border-bottom"><%= sent_person_sent_item.reason %></td>
+              </tr>
+              <tr>
+                <th><i class="far fa-calendar-alt"> date</i></th>
+                <td><%= sent_person_sent_item.sent_day %></td>
+              </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+        <div class="container">
+          <p>
+            <%= link_to  sent_persons_path, class: "btn btn-default rounded-pill" do %>
+            <i class="fas fa-arrow-circle-left"></i>
+            <span>back</span>
+            <% end %>
+            <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
+            <i class="fas fa-home"> home</i>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

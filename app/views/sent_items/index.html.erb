@@ -32,12 +32,8 @@
             <td><%= link_to sent_item.product,sent_item_path(sent_item)%></td>
           </tr>
           <tr>
-            <th><i class="fa-solid fa-user"> : from</i></th>
+            <th><i class="fa-solid fa-user"> : to</i></th>
             <td><%= sent_item.sent_person.sent_person %></td>
-          </tr>
-          <tr>
-            <th><i class="far fa-user"> : to</i></th>
-            <td><%= sent_item.family_person.family_person %></td>
           </tr>
           <tr>
             <th><i class="far fa-money-bill-alt"> amount</i></th>

@@ -51,6 +51,6 @@ class GiveItemsController < ApplicationController
 
   private
   def give_item_params
-    params.require(:give_item).permit(:user_id, :give_person_id, :give_item_id, :give_item_name, :give_day, :reason, :introduction, :product, :price, :genre_id, :image)
+    params.require(:give_item).permit(:user_id, :give_person_id, :family_person_id, :give_item_id, :give_item_name, :give_day, :reason, :introduction, :product, :price, :genre_id, :image)
   end
 end

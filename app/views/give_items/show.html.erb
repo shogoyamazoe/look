@@ -92,6 +92,10 @@
               <p>no return amount</p>
               <% end %>
             </td>
+          <tr>
+            <th><i class="far fa-calendar-check"> create date</i></th>
+            <td><%= @give_item.created_at.to_s(:datetime_jp)%></td>
+          </tr>
           </tr>
         </table>
       </div>

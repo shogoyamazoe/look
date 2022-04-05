@@ -45,12 +45,8 @@
             <td class="border-bottom"><%= @sent_item.product%></td>
           </tr>
           <tr>
-            <th class="border-bottom"><i class="fa-solid fa-user"> presenter</i></th>
+            <th class="border-bottom"><i class="fa-solid fa-user"> senter</i></th>
             <td class="border-bottom"><%= @sent_item.sent_person.sent_person %></td>
-          </tr>
-          <tr>
-            <th class="border-bottom"><i class="far fa-user"> family</i></th>
-            <td class="border-bottom"><%= @sent_item.family_person.family_person %></td>
           </tr>
           <tr>
             <th class="border-bottom"><i class="fas fa-layer-group"> genre</i></th>
@@ -92,6 +88,10 @@
               <p>no return amount</p>
               <% end %>
             </td>
+          </tr>
+          <tr>
+            <th><i class="far fa-calendar-check"> create date</i></th>
+            <td><%= @sent_item.created_at.to_s(:datetime_jp)%></td>
           </tr>
         </table>
       </div>

@@ -3,4 +3,8 @@ class SentItem < ApplicationRecord
   belongs_to :sent_person
   belongs_to :user
   belongs_to :genre
+
+  def have_return?
+    sent_returns.exists?
+  end
 end

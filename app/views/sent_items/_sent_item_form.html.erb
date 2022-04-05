@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col mx-3">
     <table class="thead-dark">
-      <%= form_with model: @sent_item,local: true do |f| %>
+      <%= form_with model: @sent_item, local: true do |f| %>
       <tr class="col-xs-2">
         <div class="form-group">
           <th style="width: 30%"><i class="fas fa-gifts"> gift</i></th>
@@ -15,23 +15,12 @@
       </tr>
       <tr>
         <div class="form-group">
-          <th style="width: 30%"><i class="fa-solid fa-user"> presenter</i></th>
+          <th style="width: 30%"><i class="fa-solid fa-user"> senter</i></th>
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
           <td style="width: 65%">
-            <%= f.collection_select :sent_person_id, GivePerson.all, :id, :sent_person, {include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
-          </td>
-        </div>
-      </tr>
-      <tr>
-        <div class="form-group">
-          <th style="width: 30%"><i class="far fa-user"> family</th>
-          <th style="width: 5%">
-            <div class="badge badge-danger"> required</div>
-          </th>
-          <td style="width: 65%">
-            <%= f.collection_select :family_person_id, FamilyPerson.all, :id, :family_person,{include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
+            <%= f.collection_select :sent_person_id, SentPerson.all, :id, :sent_person, {include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
           </td>
         </div>
       </tr>

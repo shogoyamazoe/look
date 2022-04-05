@@ -1,22 +1,17 @@
-<div class="container">
-  <div class="row">
-    <% if flash.now[:notice] %>
-    <p class="notice"><%= flash.now[:notice] %></p>
-    <% end %>
-    <h3>give_pserson edit</h3>
-  </div>
+<div class="container mb-5">
+  <i class="fa-solid fa-user" fa-4x"> Senter</i>
 </div>
 <div class="row">
   <div class="col-100 mx-auto">
     <table class="thead-dark">
-      <%= form_with model: @give_person, local: true do |f| %>
+      <%= form_with model: @sent_person, url: {controller: 'sent_persons', action: 'create' } , local: true do |f| %>
       <tr>
         <div class="form-group">
-          <th style="width: 40%"><i class="fa-solid fa-user">　presenter</th>
+          <th style="width: 40%"><i class="fa-solid fa-user">　senter</th>
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 55%"><%= f.text_field :give_person, class: "form-control"%></td>
+          <td style="width: 55%"><%= f.text_field :sent_person, class: "form-control"%></td>
         </div>
       </tr>
       <tr>
@@ -31,6 +26,10 @@
     </table>
     <div>
       <p class="mt-5">
+        <%= link_to  sent_persons_path, class: "btn btn-default rounded-pill" do %>
+        <i class="fas fa-arrow-circle-left"></i>
+        <span>back</span>
+        <% end %>
         <%= f.button :type => "submit", class: "btn btn-primary rounded-pill" do %>
         <i class="far fa-check-circle"> save</i>
         <% end %>

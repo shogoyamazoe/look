@@ -4,4 +4,34 @@
   <% end %>
   <i class=" fa-solid fa-users fa-4x"> Edit_Family</i>
 </div>
-<%= render "family_persons/family_person_form" %>
+<div class="row">
+  <div class="col-100 mx-auto">
+    <table class="thead-dark">
+      <%= form_with model: @family_person,local: true do |f| %>
+      <tr>
+        <div class="form-group">
+          <th style="width: 45%"><i class=" fa-solid fa-users">　family_person</th>
+          <th style="width: 5%">
+            <div class="badge badge-danger"> required</div>
+          </th>
+          <td style="width: auto%"><%= f.text_field :family_person, class: "form-control"%></td>
+        </div>
+      </tr>
+    </table>
+    <div>
+      <p class="mt-5">
+        <%= link_to  family_persons_path, class: "btn btn-default rounded-pill" do %>
+        <i class="fas fa-arrow-circle-left"></i>
+        <span>back</span>
+        <% end %>
+        <%= f.button :type => "submit", class: "btn btn-primary rounded-pill" do %>
+        <i class="far fa-check-circle"> save</i>
+        <% end %>
+        <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
+        <i class="fas fa-home"> home</i>
+        <% end %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</div>

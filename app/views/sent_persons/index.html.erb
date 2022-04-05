@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-auto">
-      <h3><i class="fa-solid fa-user"> Presenter index</i></h3>
+      <h3><i class="fa-solid fa-user"> Senter index</i></h3>
     </div>
   </div>
   <div class="text-right">
     <p>
-      <%= link_to new_give_person_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
+      <%= link_to new_sent_person_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
       <i class="fa-solid fa-user"> new</i>
       <% end %>
     </p>
@@ -20,31 +20,31 @@
     <div class="col">
       <div class="d-grid gap-3">
         <table class="table table-hover">
-          <% @give_persons.each_with_index do |give_person,i| %>
+          <% @sent_persons.each_with_index do |sent_person,i| %>
           <thead class="table-warning">
             <tr>
-              <th>Presenter No. <%=i+1%></th>
+              <th>Senter No. <%=i+1%></th>
               <th></th>
             </tr>
           </thead>
           <tr>
             <th><i class="fa-solid fa-user"> name</i></th>
-            <td><%= link_to give_person.give_person,give_person_path(give_person)%></td>
+            <td><%= link_to sent_person.sent_person,sent_person_path(sent_person)%></td>
           </tr>
           <tr>
             <th><i class="far fa-handshake"> Connection</i></th>
-            <td><%= give_person.involvement %></td>
+            <td><%= sent_person.involvement %></td>
           </tr>
           <tr>
             <th><i class="far fa-calendar-check"> date</i></th>
-            <td><%= give_person.created_at.to_s(:datetime_jp)%></td>
+            <td><%= sent_person.created_at.to_s(:datetime_jp)%></td>
           </tr>
           <tr>
             <td>
-              <%= link_to edit_give_person_path(give_person),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
+              <%= link_to edit_sent_person_path(sent_person),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
               <i class="far fa-edit"></i>
               <% end %>
-              <%= link_to give_person_path(give_person),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+              <%= link_to sent_person_path(sent_person),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
               <i class="far fa-trash-alt fa-1x"></i>
               <% end %></td>
             <% end %>
