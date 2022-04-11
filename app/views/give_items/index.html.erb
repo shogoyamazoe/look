@@ -51,29 +51,28 @@
             <th><i class="far fa-calendar-alt"> date</i></th>
             <td><%= give_item.give_day %></td>
           </tr>
+          <% if give_item.have_return? %>
           <tr>
-            <th><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
+            <th><i class="fas fa-reply"></i><i class="fas fa-gift"> return item count</i></th>
             <td>
-              <% if give_item.have_return? %>
-              <%= link_to give_item.give_returns[0].product,give_return_path(give_item.give_returns[0]) %>
-              <%= link_to new_give_return_path(give_item) %>
-              <% else %>
+              <%= link_to give_item.give_returns.count,index_show_give_returns_path(give_item.give_returns[0]) %>
+            </td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return all amount</i></th>
+            <td>
+              <%= give_item.total_price %>
+            </td>
+          </tr>
+          <tr>
+            <th>
               <%= link_to new_give_return_path(give_item), class: "btn btn-outline-warning rounded-pill", method: :get do %>
               <i class="fas fa-gift"> return item</i>
               <% end %>
-              <% end %>
-            </td>
+            </th>
+            <td></td>
           </tr>
-          <tr>
-            <th><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return amount</i></th>
-            <td>
-              <% if give_item.have_return? %>
-              <%= give_item.give_returns[0].price %>
-              <% else %>
-              <p>no return amount</p>
-              <% end %>
-            </td>
-          </tr>
+          <% end %>
           <tr>
             <td>
               <%= link_to edit_give_item_path(give_item),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>

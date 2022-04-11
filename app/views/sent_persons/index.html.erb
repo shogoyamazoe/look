@@ -6,7 +6,7 @@
   </div>
   <div class="text-right">
     <p>
-      <%= link_to new_sent_person_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
+      <%= link_to new_sent_person_path, class: "btn btn-outline-secondary rounded-pill", method: :get do %>
       <i class="fa-solid fa-user"> new</i>
       <% end %>
     </p>
@@ -21,7 +21,7 @@
       <div class="d-grid gap-3">
         <table class="table table-hover">
           <% @sent_persons.each_with_index do |sent_person,i| %>
-          <thead class="table-warning">
+          <thead class="table-secondary">
             <tr>
               <th>Senter No. <%=i+1%></th>
               <th></th>

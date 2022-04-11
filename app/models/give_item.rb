@@ -11,4 +11,10 @@ class GiveItem < ApplicationRecord
   def have_return?
     give_returns.exists?
   end
+
+  def total_price
+    give_returns.each do |ggg|
+      ggg[0]
+    end
+  end
 end

@@ -23,7 +23,10 @@ class GiveReturnsController < ApplicationController
 
   def show
     @give_return = GiveReturn.find(params[:id])
-    
+  end
+
+  def index_show
+    @give_returns = GiveReturn.all
   end
 
   def edit

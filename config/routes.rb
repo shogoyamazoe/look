@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :give_items
-  resources :give_returns
+  resources :give_returns do
+    collection do
+      get :index_show
+    end
+  end
   resources :sent_items
   resources :sent_persons
   resources :sent_returns

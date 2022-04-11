@@ -74,27 +74,23 @@
             <th class="border-bottom"><i class="far fa-calendar-alt"> Present date</i></th>
             <td class="border-bottom"><%= @give_item.give_day %></td>
           </tr>
+          <% if @give_item.have_return? %>
+          <% @give_item.give_returns.each do |give_item_return| %>
           <tr>
             <th class="border-bottom"><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
             <td class="border-bottom">
-              <% if @give_item.have_return? %>
-              <%= @give_item.give_returns[0].product %>
-              <% else %>
-              <p>no return item</p>
-              <% end %>
+              <%= give_item_return.product %>
             </td>
           </tr>
           <tr>
             <th class="border-bottom"><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return amount</i>
             </th>
             <td class="border-bottom">
-              <% if @give_item.have_return? %>
-              <%= @give_item.give_returns[0].price %>
-              <% else %>
-              <p>no return amount</p>
-              <% end %>
+              <%= give_item_return.price %>
             </td>
           <tr>
+            <% end %>
+            <% end %>
             <th><i class="far fa-calendar-check"> create date</i></th>
             <td><%= @give_item.created_at.to_s(:datetime_jp)%></td>
           </tr>
