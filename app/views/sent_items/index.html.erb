@@ -52,23 +52,19 @@
             <td><%= sent_item.sent_day %></td>
           </tr>
           <% if sent_item.have_return? %>
-          <% sent_item.sent_returns.each do |sent_item_return| %>
           <tr>
-            <th class="border-bottom"><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
-            <td class="border-bottom">
-              <%= link_to sent_item_return.product, sent_return_path(sent_item_return) %>
+            <th><i class="fas fa-reply"></i><i class="fas fa-gift"> return item count</i></th>
+            <td>
+              <%= link_to sent_item.sent_returns.count, index_show_sent_returns_path(sent_item) %>
             </td>
           </tr>
           <tr>
-            <th class="border-bottom"><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return amount</i>
-            </th>
-            <td class="border-bottom">
-              <%= sent_item_return.price %>
+            <th><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return all amount</i></th>
+            <td>
+              <%= sent_item.total_price %>
             </td>
-          <tr>
-            <% end %>
-            <% end %>
-          <tr>
+          </tr>
+          <% end %>
           <tr>
             <th>
               <%= link_to new_sent_return_path(sent_item), class: "btn btn-outline-info rounded-pill", method: :get do %>

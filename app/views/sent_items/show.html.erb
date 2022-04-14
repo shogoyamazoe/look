@@ -28,9 +28,11 @@
           <td>
             <div class="m-5">
               <% if @sent_item.image? %>
-              <%= image_tag @sent_item.iamge.url %>
+              <%= image_tag @sent_item.image.url %>
               <% elsif @sent_item.genre.genre == "お金" %>
               <%= image_tag "/assets/money001.png", class: "money_image" %>
+              <% else %>
+              <%= image_tag "/assets/present.png", class: "present_image" %>
               <% end %>
             </div>
           </td>
@@ -45,8 +47,12 @@
             <td class="border-bottom"><%= @sent_item.product%></td>
           </tr>
           <tr>
-            <th class="border-bottom"><i class="fa-solid fa-user"> senter</i></th>
+            <th class="border-bottom"><i class="fa-solid fa-user"> presenter</i></th>
             <td class="border-bottom"><%= @sent_item.sent_person.sent_person %></td>
+          </tr>
+          <tr>
+            <th class="border-bottom"><i class="far fa-user"> family</i></th>
+            <td class="border-bottom"><%= @sent_item.family_person.family_person %></td>
           </tr>
           <tr>
             <th class="border-bottom"><i class="fas fa-layer-group"> genre</i></th>
@@ -68,30 +74,26 @@
             <th class="border-bottom"><i class="far fa-calendar-alt"> Present date</i></th>
             <td class="border-bottom"><%= @sent_item.sent_day %></td>
           </tr>
+          <% if @sent_item.have_return? %>
+          <% @sent_item.sent_returns.each do |sent_item_return| %>
           <tr>
             <th class="border-bottom"><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
             <td class="border-bottom">
-              <% if @sent_item.have_return? %>
-              <%= @sent_item.sent_returns[0].product %>
-              <% else %>
-              <p>no return item</p>
-              <% end %>
+              <%= sent_item_return.product %>
             </td>
           </tr>
           <tr>
             <th class="border-bottom"><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return amount</i>
             </th>
             <td class="border-bottom">
-              <% if @sent_item.have_return? %>
-              <%= @sent_item.sent_returns[0].price %>
-              <% else %>
-              <p>no return amount</p>
-              <% end %>
+              <%= sent_item_return.price %>
             </td>
-          </tr>
           <tr>
+            <% end %>
+            <% end %>
             <th><i class="far fa-calendar-check"> create date</i></th>
             <td><%= @sent_item.created_at.to_s(:datetime_jp)%></td>
+          </tr>
           </tr>
         </table>
       </div>

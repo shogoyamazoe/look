@@ -26,9 +26,8 @@ class GiveReturnsController < ApplicationController
   end
 
   def index_show
-  give_item = GiveItem.find(params[:format])
-  @give_returns = give_item.give_returns 
-  
+    give_item = GiveItem.find(params[:format])
+    @give_returns = give_item.give_returns 
   end
 
   def edit

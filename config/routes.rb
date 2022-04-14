@@ -18,9 +18,13 @@ Rails.application.routes.draw do
     end
   end
   resources :sent_items
-  resources :sent_persons
-  resources :sent_returns
+  resources :sent_returns do
+    collection do
+      get :index_show
+    end
+  end
   resources :give_persons
+  resources :sent_persons
   resources :family_persons
   resources :genres
 end

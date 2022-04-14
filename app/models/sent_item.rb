@@ -11,4 +11,15 @@ class SentItem < ApplicationRecord
   def have_return?
     sent_returns.exists?
   end
+
+  def first_array
+    total_amount = 0
+    sent_returns.map do |total|
+      total_amount = total.price
+    end
+  end
+
+  def total_price
+    first_array.inject(:+)
+  end
 end

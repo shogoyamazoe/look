@@ -24,7 +24,11 @@ class SentReturnsController < ApplicationController
 
   def show
     @sent_return = SentReturn.find(params[:id])
-    
+  end
+
+  def index_show
+    sent_item = SentItem.find(params[:format])
+    @sent_returns = sent_item.sent_returns 
   end
 
   def edit
