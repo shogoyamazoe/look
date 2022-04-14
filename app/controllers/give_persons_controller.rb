@@ -32,7 +32,7 @@ class GivePersonsController < ApplicationController
     if @give_person.update(give_person_params)
       redirect_to give_persons_path
     else
-    render 'new'
+    render 'edit'
     end
   end
   

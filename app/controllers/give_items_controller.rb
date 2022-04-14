@@ -33,7 +33,7 @@ class GiveItemsController < ApplicationController
     if @give_item.update(give_item_params)
       redirect_to give_items_path
     else
-      render 'new'
+      render 'edit'
     end
   end
 

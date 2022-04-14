@@ -32,7 +32,7 @@ class FamilyPersonsController < ApplicationController
     if @family_person.update(family_person_params)
       redirect_to family_persons_path
     else
-    render 'new'
+    render 'edit'
     end
   end
 

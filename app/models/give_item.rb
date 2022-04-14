@@ -12,9 +12,14 @@ class GiveItem < ApplicationRecord
     give_returns.exists?
   end
 
-  def total_price
-    give_returns.each do |ggg|
-      ggg[0]
+  def first_array
+    total_amount = 0
+    give_returns.map do |total|
+      total_amount = total.price
     end
+  end
+
+  def total_price
+    first_array.inject(:+)
   end
 end

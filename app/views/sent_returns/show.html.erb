@@ -1,6 +1,6 @@
 <div class="container mb-5">
   <div class="col-100 mx-auto">
-    <i class="fas fa-search-plus fa-4x"> detail</i>
+    <i class="far fa-flag fa-4x"> detail</i>
   </div>
 </div>
 <div class="container">
@@ -17,7 +17,6 @@
         <tr>
           <td>
             <div class="mx-3">
-
               <% if @sent_return.user.image? %>
               <img src=<%= @sent_return.user.image %> class="icon_image">
               <% else %>
@@ -62,6 +61,16 @@
           <tr>
             <th class="border-bottom"><i class="far fa-calendar-alt"> Present date</i></th>
             <td class="border-bottom"><%= @sent_return.return_day %></td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to edit_sent_return_path(@sent_return),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
+              <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to sent_return_path(@sent_return),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+              <i class="far fa-trash-alt fa-1x"></i>
+              <% end %></td>
+            <td></td>
           </tr>
         </table>
       </div>

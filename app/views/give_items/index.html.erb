@@ -55,7 +55,7 @@
           <tr>
             <th><i class="fas fa-reply"></i><i class="fas fa-gift"> return item count</i></th>
             <td>
-              <%= link_to give_item.give_returns.count,index_show_give_returns_path(give_item.give_returns[0]) %>
+              <%= link_to give_item.give_returns.count, index_show_give_returns_path(give_item) %>
             </td>
           </tr>
           <tr>
@@ -64,6 +64,7 @@
               <%= give_item.total_price %>
             </td>
           </tr>
+          <% end %>
           <tr>
             <th>
               <%= link_to new_give_return_path(give_item), class: "btn btn-outline-warning rounded-pill", method: :get do %>
@@ -72,7 +73,6 @@
             </th>
             <td></td>
           </tr>
-          <% end %>
           <tr>
             <td>
               <%= link_to edit_give_item_path(give_item),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
@@ -80,7 +80,8 @@
               <% end %>
               <%= link_to give_item_path(give_item),class: "btn btn-danger rounded-circle btn-lg", method: :delete, data: { confirm: "本当に削除しますか？" } do %>
               <i class="far fa-trash-alt fa-1x"></i>
-              <% end %></td>
+              <% end %>
+            </td>
             <td></td>
           </tr>
           <% end %>

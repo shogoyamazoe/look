@@ -27,12 +27,12 @@ class SentPersonsController < ApplicationController
     @sent_person = SentPerson.find(params[:id])
   end
 
-    def update
+  def update
     @sent_person = SentPerson.find(params[:id])
     if @sent_person.update(sent_person_params)
       redirect_to sent_persons_path
     else
-    render 'new'
+    render 'edit'
     end
   end
   

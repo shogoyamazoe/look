@@ -31,6 +31,15 @@ class SentReturnsController < ApplicationController
     @sent_return = SentReturn.find(params[:id])
   end
 
+    def update
+    @sent_return = SentReturn.find(params[:id])
+    if @sent_return.update(sent_return_params)
+      redirect_to sent_returns_path(@sent_return)
+    else
+    render 'edit'
+    end
+  end
+
   def destroy
     @sent_return = SentReturn.find(params[:id])
     @sent_return.destroy
