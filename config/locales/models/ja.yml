@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      give_item: ギフト
+    attributes:
+      give_item:
+        product: もらったもの
+        give_person: くれた人
+        family_person: もらった人
+        price: 金額
+        reason: もらった理由
+        give_day: もらった日
+        genre: ジャンル

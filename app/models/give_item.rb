@@ -8,7 +8,10 @@ class GiveItem < ApplicationRecord
   belongs_to :user
   belongs_to :genre
 
-  validates :family_person, presence: true
+  validates :product, presence: true
+  validates :price, presence: true
+  validates :reason, presence: true
+  validates :give_day, presence: true
 
   def have_return?
     give_returns.exists?
