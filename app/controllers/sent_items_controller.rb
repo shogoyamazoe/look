@@ -1,5 +1,5 @@
 class SentItemsController < ApplicationController
-  before_action :authenticate_user!, except:[:search]
+  before_action :authenticate_user!
 
   def index
     @sent_items = SentItem.all

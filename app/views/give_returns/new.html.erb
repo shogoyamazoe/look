@@ -4,8 +4,8 @@
   <p class="notice"><%= flash.now[:notice] %></p>
   <% end %>
   <div class="row">
-    <div class="col-100 mx-auto">
-      <i class="fas fa-gift fa-3x"> return gift</i>
+    <div class="col mx-4">
+      <i class="fas fa-gift fa-2x"> return gift</i>
     </div>
   </div>
   <div class="row">
@@ -27,7 +27,7 @@
             <th style="width: 5%">
               <div class="badge badge-danger"> required</div>
             </th>
-            <td style="width: 65%">
+            <td style="width: auto%">
               <%= f.collection_select :genre_id, Genre.all, :id, :genre,{include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
             </td>
           </div>
@@ -38,7 +38,7 @@
             <th style="width: 5%">
               <div class="badge badge-danger"> required</div>
             </th>
-            <td style="width: 65%"><%= f.number_field :price, class: "form-control" %></td>
+            <td style="width: auto%"><%= f.number_field :price, class: "form-control" %></td>
           </div>
         </tr>
         <tr>
@@ -47,7 +47,7 @@
             <th style="width: 5%">
               <div></div>
             </th>
-            <td style="width: 65%"><%= f.text_field  :introduction, class: "form-control"%></td>
+            <td style="width: auto%"><%= f.text_field  :introduction, class: "form-control"%></td>
           </div>
         </tr>
         <tr>
@@ -56,16 +56,18 @@
             <th style="width: 5%">
               <div class="badge badge-danger"> required</div>
             </th>
-            <td style="width: 65%"><%= f.date_field :return_day, class: "form-control"%></td>
+            <td style="width: auto%"><%= f.date_field :return_day, class: "form-control"%></td>
           </div>
         </tr>
         <tr>
           <div class="form-group">
             <th style="width: 30%"><i class="fas fa-image"> photo</i></th>
             <th style="width: 5%">
-              <div></div>
             </th>
-            <td style="width: 65%"><%= f.file_field:image %> </td>
+            <td style="width: auto%">
+              <%= f.label :image, "Phto Select",class: "image_input_btn"  %>
+              <%= f.file_field:image, class: "image_form"  %>
+            </td>
           </div>
         </tr>
         <tr>

@@ -1,5 +1,5 @@
 class FamilyPersonsController < ApplicationController
-  before_action :authenticate_user!, except:[:search]
+  before_action :authenticate_user!
   
   def index
     @family_persons = FamilyPerson.all
