@@ -1,6 +1,14 @@
 <div class="container">
-  <% if flash.now[:notice] %>
-  <p class="notice"><%= flash.now[:notice] %></p>
+  <% if @sent_item.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@sent_item.errors.count, "error") %> prohibited this object from being saved: not successfully
+    </h2>
+    <ul>
+      <% @sent_item.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
   <i class="fas fa-gift fa-3x"> gift</i>
 </div>

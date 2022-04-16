@@ -11,8 +11,9 @@ class FamilyPersonsController < ApplicationController
 
   def create
     @family_person = FamilyPerson.new(family_person_params)
-    if @family_person.save!
-      redirect_to family_persons_path
+    if @family_person.save
+    redirect_to family_persons_path
+    flash[:notice] = '家族情報 作成しました'
     else
     render 'new'
     end
@@ -31,6 +32,7 @@ class FamilyPersonsController < ApplicationController
     @family_person = FamilyPerson.find(params[:id])
     if @family_person.update(family_person_params)
       redirect_to family_persons_path
+      flash[:notice] = '家族情報 更新しました'
     else
     render 'edit'
     end
@@ -39,7 +41,7 @@ class FamilyPersonsController < ApplicationController
   def destroy
     @family_person = FamilyPerson.find(params[:id])
     @family_person.destroy
-    flash[:notice] = '家族情報削除しました'
+    flash[:notice] = '家族情報 削除しました'
     redirect_to :family_persons
   end
 

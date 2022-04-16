@@ -20,7 +20,13 @@
 </head>
 <header>
   <nav class="navbar navbar-light bg-light">
-    <%= link_to 'GIVE & SENT', root_path, class: "navbar-brand" %>
+    <%= link_to 'Give & Sent', root_path, class: "navbar-brand" %>
+    <%= search_form_for @first_search, url: search_give_items_path do |f| %>
+    <%=f.search_field :product_or_give_person_give_person_or_family_person_family_person_or_reason_or_give_day_or_genre_genre_cont,class:"form-control ", placeholder: "GIVE ITEM キーワード"%>
+    <% end %>
+    <%= search_form_for @second_search, url: search_sent_items_path do |f| %>
+    <%=f.search_field :product_or_sent_person_sent_person_or_family_person_family_person_or_reason_or_sent_day_or_genre_genre_cont,class:"form-control", placeholder: "SENT ITEM キーワード"%>
+    <% end %>
     <% if user_signed_in? %>
     <div class="d-flex justify-content-start mb-2">
       <div class="ml-auto">
@@ -45,28 +51,28 @@
           </ul>
         </div>
         <% else %>
-        <div class="collapse navbar-collapse" id="Navber">
+        <div class="" id="Navber">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
+              <%= link_to new_user_session_path, class: "btn btn-secondary rounded-pill" do %>
+              <i class="fas fa-user-check">ログイン</i>
+              <% end %>
+              <div class="mt-3">
+                <%= link_to new_user_registration_path, class: "btn btn-primary rounded-pill" do %>
+                <i class="fas fa-baby">新規登録</i>
+                <% end %>
+              </div>
             </li>
           </ul>
         </div>
-        <% end %>
       </div>
+      <% end %>
     </div>
   </nav>
 </header>
-<% if flash[:notice] %>
-<div class="alert alert-primary" role="alert"><strong><%= notice %></strong></div>
-<% end %>
-<% if flash[:alert] %>
-<div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
-<% end %>
+<%= render "shared/flash" %>
 <%= yield %>
 </body>
+<%= render "shared/footer" %>
 
 </html>

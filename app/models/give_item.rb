@@ -8,6 +8,8 @@ class GiveItem < ApplicationRecord
   belongs_to :user
   belongs_to :genre
 
+  validates :family_person, presence: true
+
   def have_return?
     give_returns.exists?
   end

@@ -28,3 +28,21 @@
   border-radius: 15px;
   object-fit: cover;
 }
+
+.image_input_btn{
+  display: block;
+  background-color: #228B22;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 20px;
+  padding-top: 2px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.image_form{
+  display: none;
+}

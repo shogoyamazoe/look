@@ -44,11 +44,6 @@ class SentItemsController < ApplicationController
     redirect_to :sent_items
   end
 
-  def postuser
-    @user = current_user
-    @sent_items = @user.sent_items
-  end
-
   private
   def sent_item_params
     params.require(:sent_item).permit(:user_id, :sent_person_id, :family_person_id, :sent_day, :reason, :introduction, :product, :price, :genre_id, :image)

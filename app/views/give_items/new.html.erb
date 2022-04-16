@@ -1,8 +1,8 @@
 <div class="container">
-  <#%= render "shared/error" ,obj: @give_item %>
-    <% if flash.now[:notice] %>
-    <p class="notice"><%= flash.now[:notice] %></p>
-    <% end %>
-    <i class="fas fa-gift fa-3x"> gift</i>
+  <%= render "shared/error_messages" ,obj: @give_item %>
+  <% if flash.now[:notice] %>
+  <p class="notice"><%= flash.now[:notice] %></p>
+  <% end %>
+  <i class="fas fa-gift fa-3x"> gift</i>
 </div>
 <%= render "give_items/give_item_form" %>

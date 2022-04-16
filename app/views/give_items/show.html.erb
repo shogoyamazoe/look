@@ -39,19 +39,19 @@
         </tr>
       </table>
     </div>
-    <div class="col-6">
+    <div class="col">
       <div class="mt-3 table-hover">
         <table>
           <tr>
-            <th class="border-bottom style=width 50%"><i class="fas fa-gifts"> gift</i></th>
+            <th class="border-bottom"><i class="fas fa-gifts"> gift</i></th>
             <td class="border-bottom"><%= @give_item.product%></td>
           </tr>
           <tr>
-            <th class="border-bottom"><i class="fa-solid fa-user"> presenter</i></th>
+            <th class="border-bottom"><i class="fa-solid fa-user"> :from ( presenter )</i></th>
             <td class="border-bottom"><%= @give_item.give_person.give_person %></td>
           </tr>
           <tr>
-            <th class="border-bottom"><i class="far fa-user"> family</i></th>
+            <th class="border-bottom"><i class="far fa-user"> :to ( family )</i></th>
             <td class="border-bottom"><%= @give_item.family_person.family_person %></td>
           </tr>
           <tr>
@@ -77,23 +77,25 @@
           <% if @give_item.have_return? %>
           <% @give_item.give_returns.each do |give_item_return| %>
           <tr>
-            <th class="border-bottom"><i class="fas fa-reply"></i><i class="fas fa-gift"> return item</i></th>
+            <th class="border-bottom"><i class="fas fa-reply"></i><i class="fas fa-gift"> return
+                item</i></th>
             <td class="border-bottom">
               <%= give_item_return.product %>
             </td>
           </tr>
           <tr>
-            <th class="border-bottom"><i class="fas fa-reply"></i><i class="far fa-money-bill-alt"> return amount</i>
+            <th class="border-bottom"><i class="fas fa-reply"></i><i class="far fa-money-bill-alt">
+                return amount</i>
             </th>
             <td class="border-bottom">
               <%= give_item_return.price %>
             </td>
+          </tr>
           <tr>
             <% end %>
             <% end %>
-            <th><i class="far fa-calendar-check"> create date</i></th>
-            <td><%= @give_item.created_at.to_s(:datetime_jp)%></td>
-          </tr>
+            <th class="border-bottom"><i class="far fa-calendar-check"> create date</i></th>
+            <td class="border-bottom"><%= @give_item.created_at.to_s(:datetime_jp)%></td>
           </tr>
         </table>
       </div>

@@ -2,15 +2,15 @@
   <% if flash.now[:notice] %>
   <p class="notice"><%= flash.now[:notice] %></p>
   <% end %>
-  <i class=" fa-solid fa-users fa-4x"> Family</i>
+  <i class=" fa-solid fa-users fa-2x"> Family</i>
 </div>
 <div class="row">
-  <div class="col-100 mx-auto">
+  <div class="col mx-3">
     <table class="thead-dark">
       <%= form_with model: @family_person, url: {controller: 'family_persons', action: 'create' } ,local: true do |f| %>
       <tr>
         <div class="form-group">
-          <th style="width: 45%"><i class=" fa-solid fa-users">　family_person</th>
+          <th style="width: auto%"><i class=" fa-solid fa-users">　family_person</th>
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>

@@ -9,7 +9,7 @@
             <div class="badge badge-danger"> required</div>
           </th>
           <div class="col-md-2">
-            <td style="width: 65%"><%= f.text_field :product , class: "form-control"%></td>
+            <td style="width: auto%"><%= f.text_field :product , class: "form-control"%></td>
           </div>
         </div>
       </tr>
@@ -19,7 +19,7 @@
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 65%">
+          <td style="width: auto%">
             <%= f.collection_select :family_person_id, FamilyPerson.all, :id, :family_person,{include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
           </td>
         </div>
@@ -30,7 +30,7 @@
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 65%">
+          <td style="width: auto%">
             <%= f.collection_select :sent_person_id, SentPerson.all, :id, :sent_person, {include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
           </td>
         </div>
@@ -41,7 +41,7 @@
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 65%">
+          <td style="width: auto%">
             <%= f.collection_select :genre_id, Genre.all, :id, :genre,{include_blank: "選択して下さい"}, {class: "form-control input-sm"} %>
           </td>
         </div>
@@ -52,7 +52,7 @@
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 65%"><%= f.number_field :price, class: "form-control" %></td>
+          <td style="width: auto%"><%= f.number_field :price, class: "form-control" %></td>
         </div>
       </tr>
       <tr>
@@ -61,7 +61,7 @@
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 65%"><%= f.text_field  :reason, class: "form-control"%></td>
+          <td style="width: auto%"><%= f.text_field  :reason, class: "form-control"%></td>
         </div>
       </tr>
       <tr>
@@ -70,7 +70,7 @@
           <th style="width: 5%">
             <div></div>
           </th>
-          <td style="width: 65%"><%= f.text_field  :introduction, class: "form-control"%></td>
+          <td style="width: auto%"><%= f.text_field  :introduction, class: "form-control"%></td>
         </div>
       </tr>
       <tr>
@@ -79,16 +79,18 @@
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
-          <td style="width: 65%"><%= f.date_field :sent_day, class: "form-control"%></td>
+          <td style="width: auto%"><%= f.date_field :sent_day, class: "form-control"%></td>
         </div>
       </tr>
       <tr>
         <div class="form-group">
           <th style="width: 30%"><i class="fas fa-image"> photo</i></th>
           <th style="width: 5%">
-            <div></div>
           </th>
-          <td style="width: 65%"><%= f.file_field:image %> </td>
+          <td style="width: auto%">
+            <%= f.label :image, "Phto Select",class: "image_input_btn"  %>
+            <%= f.file_field:image, class: "image_form"  %>
+          </td>
         </div>
       </tr>
     </table>

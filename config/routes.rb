@@ -11,13 +11,21 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :give_items
+  resources :give_items do
+    collection do
+      get :search
+    end
+  end
   resources :give_returns do
     collection do
       get :index_show
     end
   end
-  resources :sent_items
+  resources :sent_items do
+    collection do
+      get :search
+    end
+  end
   resources :sent_returns do
     collection do
       get :index_show

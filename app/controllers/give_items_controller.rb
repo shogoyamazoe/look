@@ -12,8 +12,9 @@ class GiveItemsController < ApplicationController
   def create
     @give_item = GiveItem.new(give_item_params)
     @give_item.user_id = current_user.id  
-    if @give_item.save!
+    if @give_item.save
       redirect_to give_item_path(@give_item)
+      flash[:notice] = '頂いたものを登録しました'
     else
     render 'new'
     end
@@ -32,6 +33,7 @@ class GiveItemsController < ApplicationController
     @give_item = GiveItem.find(params[:id])
     if @give_item.update(give_item_params)
       redirect_to give_items_path
+       flash[:notice] = '頂いたものを更新しました'
     else
       render 'edit'
     end
@@ -42,11 +44,6 @@ class GiveItemsController < ApplicationController
     @give_item.destroy
     flash[:notice] = 'アイテムを削除しました'
     redirect_to :give_items
-  end
-
-  def postuser
-    @user = current_user
-    @give_items = @user.give_items
   end
 
   private

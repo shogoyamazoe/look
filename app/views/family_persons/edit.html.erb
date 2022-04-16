@@ -2,10 +2,10 @@
   <% if flash.now[:notice] %>
   <p class="notice"><%= flash.now[:notice] %></p>
   <% end %>
-  <i class=" fa-solid fa-users fa-4x"> Edit_Family</i>
+  <i class=" fa-solid fa-users fa-2x"> Edit_Family</i>
 </div>
 <div class="row">
-  <div class="col-100 mx-auto">
+  <div class="col mx-3">
     <table class="thead-dark">
       <%= form_with model: @family_person,local: true do |f| %>
       <tr>

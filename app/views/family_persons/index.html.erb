@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+<p class="notice"><%= flash[:notice] %></p>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-auto">
@@ -12,9 +15,6 @@
     </p>
   </div>
 </div>
-<% if flash[:notice] %>
-<p class="notice"><%= flash[:notice] %></p>
-<% end %>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -27,7 +27,7 @@
           </thead>
           <% @family_persons.each do |family_person| %>
           <tr>
-            <td><%= link_to family_person.family_person,family_person_path(family_person)%></td>
+            <td><%= family_person.family_person %></td>
             <td>
               <div class="d-flex justify-content-end">
                 <%= link_to edit_family_person_path(family_person),class: "btn btn-outline-dark, rounded-circle btn-lg", method: :get do %>
