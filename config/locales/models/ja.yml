@@ -20,3 +20,29 @@ ja:
         genre_id: ジャンル
         price: 金額
         return_day: 返礼した日
+
+      give_person:
+        give_person: くれた人
+        involvement: 関係性
+
+      genre:
+        genre: ジャンル
+
+      sent_item:
+        product: 送ったもの
+        sent_person: 送った人
+        family_person: あげた人
+        price: 金額
+        reason: もらった理由
+        sent_day: もらった日
+        genre: ジャンル
+
+      sent_return:
+        product: 返礼品
+        genre_id: ジャンル
+        price: 金額
+        return_day: 返礼してもらった日
+
+      sent_person:
+        sent_person: 送った人
+        involvement: 関係性

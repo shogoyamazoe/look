@@ -8,6 +8,11 @@ class SentItem < ApplicationRecord
   belongs_to :user
   belongs_to :genre
 
+  validates :product, presence: true
+  validates :price, presence: true
+  validates :reason, presence: true
+  validates :sent_day, presence: true
+
   def have_return?
     sent_returns.exists?
   end

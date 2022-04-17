@@ -1,5 +1,8 @@
-<div class="container mb-5">
-  <i class="fa-solid fa-user" fa-4x"> Senter</i>
+<div class="container">
+  <%= render "shared/error_messages" ,obj: @sent_person %>
+  <% if flash.now[:notice] %>
+  <p class="notice"><%= flash.now[:notice] %></p>
+  <% end %>
 </div>
 <div class="row">
   <div class="col-100 mx-auto">

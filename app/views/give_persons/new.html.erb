@@ -1,11 +1,8 @@
 <div class="container">
-  <div class="row">
-    <%= render "shared/error_messages" ,obj: @give_person %>
-    <% if flash.now[:notice] %>
-    <p class="notice"><%= flash.now[:notice] %></p>
-    <% end %>
-    <h3>give_pserson new</h3>
-  </div>
+  <%= render "shared/error_messages" ,obj: @give_person %>
+  <% if flash.now[:notice] %>
+  <p class="notice"><%= flash.now[:notice] %></p>
+  <% end %>
 </div>
 <div class="row">
   <div class="col-100 mx-auto">

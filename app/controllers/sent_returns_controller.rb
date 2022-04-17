@@ -13,10 +13,10 @@ class SentReturnsController < ApplicationController
 
   def create
     @sent_return = SentReturn.new(sent_return_params)
-
     @sent_return.user_id = current_user.id
-    if @sent_return.save!
+    if @sent_return.save
       redirect_to sent_return_path(@sent_return)
+      flash[:notice] = '送ったもの登録しました'
     else
     render 'new'
     end
@@ -39,6 +39,7 @@ class SentReturnsController < ApplicationController
     @sent_return = SentReturn.find(params[:id])
     if @sent_return.update(sent_return_params)
       redirect_to sent_returns_path(@sent_return)
+      flash[:notice] = '送ったもの更新しました'
     else
     render 'edit'
     end

@@ -11,8 +11,9 @@ class SentPersonsController < ApplicationController
 
   def create
     @sent_person = SentPerson.new(sent_person_params)
-    if @sent_person.save!
+    if @sent_person.save
       redirect_to sent_persons_path
+      flash[:notice] = '送った人登録しました'
     else
     render 'new'
     end
@@ -31,6 +32,7 @@ class SentPersonsController < ApplicationController
     @sent_person = SentPerson.find(params[:id])
     if @sent_person.update(sent_person_params)
       redirect_to sent_persons_path
+      flash[:notice] = '送った人更新しました'
     else
     render 'edit'
     end

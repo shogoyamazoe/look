@@ -11,8 +11,9 @@ class GivePersonsController < ApplicationController
 
   def create
     @give_person = GivePerson.new(give_person_params)
-    if @give_person.save!
+    if @give_person.save
       redirect_to give_persons_path
+      flash[:notice] = 'くれた人登録しました'
     else
     render 'new'
     end
@@ -31,6 +32,7 @@ class GivePersonsController < ApplicationController
     @give_person = GivePerson.find(params[:id])
     if @give_person.update(give_person_params)
       redirect_to give_persons_path
+      flash[:notice] = 'くれた人更新しました'
     else
     render 'edit'
     end

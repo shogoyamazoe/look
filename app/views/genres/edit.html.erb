@@ -1,7 +1,5 @@
 <div class="container">
-  <% if flash.now[:notice] %>
-  <p class="notice"><%= flash.now[:notice] %></p>
-  <% end %>
+  <%= render "shared/error_messages" ,obj: @genre %>
   <i class="fas fa-layer-group fa-4x"> edit_genre</i>
 </div>
 <%= render "genres/genre_form" %>

@@ -11,8 +11,9 @@ class GenresController < ApplicationController
 
   def create
     @genre = Genre.new(genre_params)
-    if @genre.save!
+    if @genre.save
       redirect_to genres_path
+      flash[:notice] = 'ジャンル作成しました'
     else
     render 'new'
     end
@@ -31,6 +32,7 @@ class GenresController < ApplicationController
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
       redirect_to genres_path
+      flash[:notice] = 'ジャンル更新しました'
     else
     render 'edit'
     end
@@ -39,7 +41,7 @@ class GenresController < ApplicationController
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
-    flash[:notice] = '分類情報削除しました'
+    flash[:notice] = 'ジャンル削除しました'
     redirect_to :genres
   end
 
