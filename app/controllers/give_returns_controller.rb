@@ -14,8 +14,9 @@ class GiveReturnsController < ApplicationController
   def create
     @give_return = GiveReturn.new(give_return_params)
     @give_return.user_id = current_user.id
-    if @give_return.save!
+    if @give_return.save
       redirect_to give_return_path(@give_return)
+      flash[:notice] = 'お返しの品登録しました'
     else
     render 'new'
     end
@@ -32,6 +33,16 @@ class GiveReturnsController < ApplicationController
 
   def edit
     @give_return = GiveReturn.find(params[:id])
+  end
+
+  def update
+    @give_return = GiveReturn.find(params[:id])
+    if @give_return.update(give_return_params)
+      redirect_to give_returns_path
+       flash[:notice] = 'お返しの品を更新しました'
+    else
+      render 'edit'
+    end
   end
 
   def destroy

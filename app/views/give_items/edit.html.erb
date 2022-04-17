@@ -1,4 +1,5 @@
 <div class="container">
+ <%= render "shared/error_messages" ,obj: @give_item %>
   <div class="row">
     <% if flash.now[:notice] %>
     <p class="notice"><%= flash.now[:notice] %></p>

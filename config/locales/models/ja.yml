@@ -11,3 +11,12 @@ ja:
         reason: もらった理由
         give_day: もらった日
         genre: ジャンル
+
+      family_person:
+        family_person: 家族情報
+
+      give_return:
+        product: 返礼品
+        genre_id: ジャンル
+        price: 金額
+        return_day: 返礼した日
