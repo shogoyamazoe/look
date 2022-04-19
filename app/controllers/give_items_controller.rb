@@ -22,7 +22,6 @@ class GiveItemsController < ApplicationController
 
   def show
     @give_item = GiveItem.find(params[:id])
-    
   end
 
   def edit

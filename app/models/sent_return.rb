@@ -4,6 +4,7 @@ class SentReturn < ApplicationRecord
 
   belongs_to :sent_item
   belongs_to :user
+  belongs_to :genre
 
   validates :product, presence: true
   validates :genre_id, presence: true

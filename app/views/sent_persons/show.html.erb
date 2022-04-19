@@ -20,7 +20,7 @@
           <div class="d-grid gap-3">
             <table class="table table-hover">
               <% @sent_persons.each_with_index do |sent_person_sent_item,i| %>
-              <thead class="table-warning">
+              <thead class="table-secondary">
                 <tr>
                   <th>ITEM No. <%=i+1%></th>
                   <th></th>
@@ -28,7 +28,8 @@
               </thead>
               <tr>
                 <th class="border-bottom style=width 50%"><i class="fas fa-gifts"> gift</i></th>
-                <td class="border-bottom"><%= sent_person_sent_item.product%></td>
+                <td class="border-bottom"><%= link_to sent_person_sent_item.product,sent_item_path(@sent_persons.ids)
+                  %></td>
               </tr>
               <tr>
                 <th class="border-bottom"><i class="far fa-money-bill-alt"> amount</i></th>

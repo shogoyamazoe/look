@@ -4,6 +4,7 @@ class GiveReturn < ApplicationRecord
 
   belongs_to :give_item
   belongs_to :user
+  belongs_to :genre
 
   validates :product, presence: true
   validates :genre_id, presence: true

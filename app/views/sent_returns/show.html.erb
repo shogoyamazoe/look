@@ -1,6 +1,6 @@
 <div class="container mb-5">
   <div class="col-100 mx-auto">
-    <i class="far fa-flag fa-4x"> detail</i>
+    <h3><i class="far fa-flag"> detail</i></h3>
   </div>
 </div>
 <div class="container">
@@ -30,9 +30,12 @@
           <td>
             <div class="m-5">
               <% if @sent_return.image? %>
-              <%= image_tag @sent_return.iamge.url %>
-              <% elsif @sent_return.genre_id == 1 %>
+              <%= image_tag @sent_return.image.url %>
+              <% elsif %>
+              <% @sent_return.genre.genre == "お金" %>
               <%= image_tag "/assets/money001.png", class: "money_image" %>
+              <% else %>
+              <%= image_tag "/assets/present.png", class: "present_image" %>
               <% end %>
             </div>
           </td>

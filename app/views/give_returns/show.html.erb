@@ -1,5 +1,5 @@
 <div class="container mb-5">
-  <i class="far fa-flag fa-4x"> detail</i>
+  <h3><i class="far fa-flag"> detail</i></h3>
 </div>
 <div class="container">
   <div class="row">
@@ -28,9 +28,12 @@
           <td>
             <div class="m-5">
               <% if @give_return.image? %>
-              <%= image_tag @give_return.iamge.url %>
-              <% elsif @give_return.genre_id == 1 %>
+              <%= image_tag @give_return.image.url %>
+              <% elsif %>
+              <% @give_return.genre.genre == "お金" %>
               <%= image_tag "/assets/money001.png", class: "money_image" %>
+              <% else %>
+              <%= image_tag "/assets/present.png", class: "present_image" %>
               <% end %>
             </div>
           </td>
@@ -54,7 +57,7 @@
           </tr>
           <tr>
             <th class="border-bottom"><i class="fas fa-layer-group"> genre</i></th>
-            <td class="border-bottom"><%= @give_return.give_item.genre.genre %></td>
+            <td class="border-bottom"><%= @give_return.genre.genre %></td>
           </tr>
           <tr>
             <th class="border-bottom"><i class="far fa-money-bill-alt"> amount</i></th>
@@ -73,6 +76,10 @@
     </div>
     <div class="container">
       <p>
+        <%= link_to  give_items_path, class: "btn btn-default rounded-pill" do %>
+        <i class="fas fa-arrow-circle-left"></i>
+        <span>back</span>
+        <% end %>
         <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
         <i class="fas fa-home"> home</i>
         <% end %>
