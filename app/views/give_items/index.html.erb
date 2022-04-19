@@ -6,22 +6,19 @@
   </div>
   <div class="text-right">
     <p>
-      <%= link_to new_give_item_path, class: "btn btn-outline-warning rounded-pill", method: :get do %>
+      <%= link_to new_give_item_path, class: "btn btn-outline-danger rounded-pill", method: :get do %>
       <i class="fas fa-gift"> new</i>
       <% end %>
     </p>
   </div>
 </div>
-<% if flash[:notice] %>
-<p class="notice"><%= flash[:notice] %></p>
-<% end %>
 <div class="container">
   <div class="row">
     <div class="col">
       <div class="d-grid gap-3">
         <table class="table table-hover">
           <% @give_items.each_with_index do |give_item,i| %>
-          <thead class="table-warning">
+          <thead class="table-danger">
             <tr>
               <th>ITEM No. <%=i +1 %></th>
               <th></th>
@@ -67,7 +64,7 @@
           <% end %>
           <tr>
             <th>
-              <%= link_to new_give_return_path(give_item), class: "btn btn-outline-warning rounded-pill", method: :get do %>
+              <%= link_to new_give_return_path(give_item), class: "btn btn-outline-danger rounded-pill", method: :get do %>
               <i class="fas fa-gift"> return item</i>
               <% end %>
             </th>

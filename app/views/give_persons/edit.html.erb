@@ -1,14 +1,12 @@
 <div class="container">
-  <div class="row">
-    <%= render "shared/error_messages" ,obj: @give_person %>
-    <% if flash.now[:notice] %>
-    <p class="notice"><%= flash.now[:notice] %></p>
-    <% end %>
-    <h3>give_pserson edit</h3>
-  </div>
+  <%= render "shared/error_messages" ,obj: @give_person %>
+  <% if flash.now[:notice] %>
+  <p class="notice"><%= flash.now[:notice] %></p>
+  <% end %>
+  <i class="fa-solid fa-user fa-2x"> Presenter edit</i>
 </div>
 <div class="row">
-  <div class="col-100 mx-auto">
+  <div class="col mx-3">
     <table class="thead-dark">
       <%= form_with model: @give_person, local: true do |f| %>
       <tr>
@@ -32,6 +30,10 @@
     </table>
     <div>
       <p class="mt-5">
+        <%= link_to  give_persons_path, class: "btn btn-default rounded-pill" do %>
+        <i class="fas fa-arrow-circle-left"></i>
+        <span>back</span>
+        <% end %>
         <%= f.button :type => "submit", class: "btn btn-primary rounded-pill" do %>
         <i class="far fa-check-circle"> save</i>
         <% end %>

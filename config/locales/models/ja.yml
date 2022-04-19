@@ -4,22 +4,22 @@ ja:
       give_item: ギフト
     attributes:
       give_item:
-        product: もらったもの
+        product: 頂いたもの
         give_person: くれた人
         family_person: もらった人
         price: 金額
-        reason: もらった理由
-        give_day: もらった日
+        reason: 頂いた理由
+        give_day: 頂いた日
         genre: ジャンル
 
       family_person:
         family_person: 家族情報
 
       give_return:
-        product: 返礼品
+        product: お返ししたもの
         genre_id: ジャンル
         price: 金額
-        return_day: 返礼した日
+        return_day: お返しした日
 
       give_person:
         give_person: くれた人
@@ -33,15 +33,15 @@ ja:
         sent_person: 送った人
         family_person: あげた人
         price: 金額
-        reason: もらった理由
-        sent_day: もらった日
+        reason: 送った理由
+        sent_day: 送った日
         genre: ジャンル
 
       sent_return:
-        product: 返礼品
+        product: お返ししてもらったもの
         genre_id: ジャンル
         price: 金額
-        return_day: 返礼してもらった日
+        return_day: お返ししてもらった日
 
       sent_person:
         sent_person: 送った人

@@ -3,9 +3,10 @@
   <% if flash.now[:notice] %>
   <p class="notice"><%= flash.now[:notice] %></p>
   <% end %>
+  <h3><i class="fa-solid fa-user"> Presenter register</i></h3>
 </div>
 <div class="row">
-  <div class="col-100 mx-auto">
+  <div class="col mx-3">
     <table class="thead-dark">
       <%= form_with model: @give_person, url: {controller: 'give_persons', action: 'create' } , local: true do |f| %>
       <tr>
@@ -29,6 +30,10 @@
     </table>
     <div>
       <p class="mt-5">
+        <%= link_to  give_persons_path, class: "btn btn-default rounded-pill" do %>
+        <i class="fas fa-arrow-circle-left"></i>
+        <span>back</span>
+        <% end %>
         <%= f.button :type => "submit", class: "btn btn-primary rounded-pill" do %>
         <i class="far fa-check-circle"> save</i>
         <% end %>

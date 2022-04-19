@@ -20,7 +20,9 @@
 </head>
 <header>
   <nav class="navbar navbar-light bg-light">
-    <%= link_to 'Give & Sent', root_path, class: "navbar-brand" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <i class="far fa-handshake"> give & sent </i>
+    <% end %>
     <%= search_form_for @first_search, url: search_give_items_path do |f| %>
     <%=f.search_field :product_or_give_person_give_person_or_family_person_family_person_or_reason_or_give_day_or_genre_genre_cont,class:"form-control ", placeholder: "GIVE ITEM キーワード"%>
     <% end %>
