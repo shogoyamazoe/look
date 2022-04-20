@@ -1,69 +1,70 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col">
       <table>
         <tr>
           <th>
             <div class="m-3">
-              <i class="fa-solid fa-user fa-2x"> Presenter : </i>
+              <h3><i class="fa-solid fa-user"> Presenter : <%= @give_person.give_person%></i></h3>
             </div>
+            <p>
+              <i class="fas fa-grip-horizontal"> total count : <%= @give_persons.count %> pcs </i>
+            </p>
+            <i class="fas fa-money-check-alt"> total amount : ¥ <%= @give_person.second_total_price %></i>
           </th>
-          <td>
-            <h3><%= @give_person.give_person%></h3>
-            <%= @give_person.count%>
-          </td>
         </tr>
       </table>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="d-grid gap-3">
-            <table class="table table-hover">
-              <% @give_persons.each_with_index do |give_person_give_item,i| %>
-              <thead class="table-warning">
-                <tr>
-                  <th>ITEM No. <%=i+1%></th>
-                  <th></th>
-                </tr>
-              </thead>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="d-grid gap-3">
+          <table class="table table-hover">
+            <% @give_persons.each_with_index do |give_person_give_item,i| %>
+            <thead class="table-warning">
               <tr>
-                <th class="border-bottom style=width 50%"><i class="fas fa-gifts"> gift</i></th>
-                <td class="border-bottom"><%= link_to give_person_give_item.product,give_item_path(@give_persons.ids)
+                <th>ITEM No. <%=i+1%></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tr>
+              <th class="border-bottom style=width 50%"><i class="fas fa-gifts"> gift</i></th>
+              <td class="border-bottom"><%= link_to give_person_give_item.product,give_item_path(@give_persons.ids)
                   %></td>
-              </tr>
-              <tr>
-                <th><i class="far fa-user"> : to</i></th>
-                <td><%= give_person_give_item.family_person.family_person %></td>
-              </tr>
-              <tr>
-                <th class="border-bottom"><i class="far fa-money-bill-alt"> amount</i></th>
-                <td class="border-bottom"><%= give_person_give_item.price %></td>
-              </tr>
-              <tr>
-                <th><i class="far fa-comment-dots"> reason</i></th>
-                <td class="border-bottom"><%= give_person_give_item.reason %></td>
-              </tr>
-              <tr>
-                <th><i class="far fa-calendar-alt"> date</i></th>
-                <td><%= give_person_give_item.give_day %></td>
-              </tr>
-              <% end %>
-            </table>
-          </div>
-        </div>
-        <div class="container">
-          <p>
-            <%= link_to  give_persons_path, class: "btn btn-default rounded-pill" do %>
-            <i class="fas fa-arrow-circle-left"></i>
-            <span>back</span>
+            </tr>
+            <tr>
+              <th><i class="far fa-user"> : to</i></th>
+              <td><%= give_person_give_item.family_person.family_person %></td>
+            </tr>
+            <tr>
+              <th class="border-bottom"><i class="far fa-money-bill-alt"> amount</i></th>
+              <td class="border-bottom"><%= give_person_give_item.price %></td>
+            </tr>
+            <tr>
+              <th><i class="far fa-comment-dots"> reason</i></th>
+              <td class="border-bottom"><%= give_person_give_item.reason %></td>
+            </tr>
+            <tr>
+              <th><i class="far fa-calendar-alt"> date</i></th>
+              <td><%= give_person_give_item.give_day %></td>
+            </tr>
             <% end %>
-            <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
-            <i class="fas fa-home"> home</i>
-            <% end %>
-          </p>
+          </table>
         </div>
+      </div>
+      <div class="container">
+        <p>
+          <%= link_to  give_persons_path, class: "btn btn-default rounded-pill" do %>
+          <i class="fas fa-arrow-circle-left"></i>
+          <span>back</span>
+          <% end %>
+          <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
+          <i class="fas fa-home"> home</i>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
+</div>
 </div>

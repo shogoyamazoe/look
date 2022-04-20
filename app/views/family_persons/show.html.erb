@@ -4,13 +4,14 @@
       <table>
         <tr>
           <th>
-            <div class="mx-3">
-              <i class="fa-solid fa-user fa-2x"> family : </i>
+            <div class="m-3">
+              <h3><i class="fa-solid fa-user"> family : <%= @family_person.family_person%></i></h3>
             </div>
+            <p>
+              <i class="fas fa-grip-horizontal"> total count : <%= @family_persons.count %> pcs </i>
+            </p>
+            <i class="fas fa-money-check-alt"> total amount : ¥ <%= @family_person.second_total_price %></i>
           </th>
-          <td>
-            <h3><%= @family_person.family_person%></h3>
-          </td>
         </tr>
       </table>
     </div>

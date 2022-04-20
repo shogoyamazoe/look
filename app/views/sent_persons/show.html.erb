@@ -5,12 +5,13 @@
         <tr>
           <th>
             <div class="m-3">
-              <i class="fa-solid fa-user fa-2x"> Senter : </i>
+              <h3><i class="fa-solid fa-user"> senter : <%= @sent_person.sent_person%></i></h3>
             </div>
+            <p>
+              <i class="fas fa-grip-horizontal"> total count : <%= @sent_persons.count %> pcs </i>
+            </p>
+            <i class="fas fa-money-check-alt"> total amount : ¥ <%= @sent_person.second_total_price %></i>
           </th>
-          <td>
-            <h3><%= @sent_person.sent_person%></h3>
-          </td>
         </tr>
       </table>
     </div>
