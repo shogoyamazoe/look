@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-auto">
-      <h3><i class="fas fa-gifts"> gift return index</i></h3>
+      <h3><i class="fas fa-gifts"></i> Gift Return Index</h3>
     </div>
   </div>
 </div>
@@ -18,19 +18,19 @@
             </tr>
           </thead>
           <tr>
-            <th><i class="fas fa-gifts"> gift</i></th>
+            <th><i class="fas fa-gifts"></i> Gift</th>
             <td><%= link_to give_return.product, give_return_path(give_return)%></td>
           </tr>
           <tr>
-            <th><i class="far fa-money-bill-alt"> amount</i></th>
+            <th><i class="far fa-money-bill-alt"></i> Amount</th>
             <td><%= give_return.price %></td>
           </tr>
           <tr>
-            <th><i class="far fa-comment-dots"> reason</i></th>
+            <th><i class="far fa-comment-dots"></i> Reason</th>
             <td><%= give_return.introduction %></td>
           </tr>
           <tr>
-            <th><i class="far fa-calendar-alt"> date</i></th>
+            <th><i class="far fa-calendar-alt"></i> Date</th>
             <td><%= give_return.return_day %></td>
           </tr>
           <tr>
@@ -48,7 +48,7 @@
         </table>
         <p><%= link_to  give_items_path, class: "btn btn-default rounded-pill" do %>
           <i class="fas fa-arrow-circle-left"></i>
-          <span>back</span>
+            Back
           <% end %>
         </p>
       </div>

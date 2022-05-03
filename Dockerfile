@@ -16,6 +16,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 # create working directory
 RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
+RUN npm install --global yarn
 
 # bundle install
 COPY Gemfile $APP_ROOT/Gemfile

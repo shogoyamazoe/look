@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-auto">
-      <h3><i class="fas fa-gifts"> give return item index</i></h3>
+      <h3><i class="fas fa-gifts"></i> Give Return Item Index</h3>
     </div>
   </div>
 </div>
@@ -13,28 +13,28 @@
           <% @give_returns.each_with_index do |give_return,i| %>
           <thead class="table-danger">
             <tr>
-              <th> RETURN ITEM No. <%=i +1 %></th>
+              <th> Return Item No. <%=i +1 %></th>
               <th></th>
             </tr>
           </thead>
           <tr>
-            <th><i class="fas fa-gifts"> gift</i></th>
+            <th><i class="fas fa-gifts"></i> Gift</th>
             <td><%= link_to give_return.product,give_return_path(give_return)%></td>
           </tr>
           <tr>
-            <th><i class="far fa-user"> : from</i></th>
+            <th><i class="far fa-user"></i> : From</th>
             <td><%= give_return.give_item.family_person.family_person %></td>
           </tr>
           <tr>
-            <th><i class="fa-solid fa-user"> : from</i></th>
+            <th><i class="fa-solid fa-user"></i> : To</th>
             <td><%= give_return.give_item.give_person.give_person %></td>
           </tr>
           <tr>
-            <th><i class="far fa-money-bill-alt"> amount</i></th>
+            <th><i class="far fa-money-bill-alt"></i> Amount</th>
             <td><%= give_return.price %></td>
           </tr>
           <tr>
-            <th><i class="far fa-calendar-alt"> date</i></th>
+            <th><i class="far fa-calendar-alt"></i> Date</th>
             <td><%= give_return.return_day %></td>
           </tr>
           <tr>
@@ -51,7 +51,7 @@
         </table>
         <p><%= link_to  root_path, class: "btn btn-default rounded-pill" do %>
           <i class="fas fa-arrow-circle-left"></i>
-          <span>back</span>
+            Back
           <% end %>
         </p>
       </div>

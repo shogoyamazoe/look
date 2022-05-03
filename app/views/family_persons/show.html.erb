@@ -5,12 +5,12 @@
         <tr>
           <th>
             <div class="m-3">
-              <h3><i class="fa-solid fa-user"> family : <%= @family_person.family_person%></i></h3>
+              <h3><i class="fa-solid fa-user"></i> Family : <%= @family_person.family_person%></h3>
             </div>
             <p>
-              <i class="fas fa-grip-horizontal"> total count : <%= @family_persons.count %> pcs </i>
+              <i class="fas fa-grip-horizontal"></i> Total Count : <%= @family_persons.count %> pcs
             </p>
-            <i class="fas fa-money-check-alt"> total amount : ¥ <%= @family_person.second_total_price %></i>
+            <i class="fas fa-money-check-alt"></i> Total Amount : ¥ <%= @family_person.second_total_price %>
           </th>
         </tr>
       </table>
@@ -23,30 +23,30 @@
               <% @family_persons.each_with_index do |family_person_give_item,i| %>
               <thead class="table-success">
                 <tr>
-                  <th>ITEM No. <%=i+1%></th>
+                  <th>Item No. <%=i+1%></th>
                   <th></th>
                 </tr>
               </thead>
               <tr>
-                <th class="border-bottom style=width 50%"><i class="fas fa-gifts"> gift</i></th>
+                <th class="border-bottom style=width 50%"><i class="fas fa-gifts"></i> Gift</th>
                 <td class="border-bottom">
                   <%= link_to family_person_give_item.product,give_item_path(@family_persons.ids) %>
                 </td>
               </tr>
               <tr>
-                <th><i class="far fa-user"> : from</i></th>
+                <th><i class="far fa-user"></i> : From</th>
                 <td><%= family_person_give_item.give_person.give_person %></td>
               </tr>
               <tr>
-                <th class="border-bottom"><i class="far fa-money-bill-alt"> amount</i></th>
+                <th class="border-bottom"><i class="far fa-money-bill-alt"></i> Amount</th>
                 <td class="border-bottom"><%= family_person_give_item.price %></td>
               </tr>
               <tr>
-                <th><i class="far fa-comment-dots"> reason</i></th>
+                <th><i class="far fa-comment-dots"></i> Reason</th>
                 <td class="border-bottom"><%= family_person_give_item.reason %></td>
               </tr>
               <tr>
-                <th><i class="far fa-calendar-alt"> date</i></th>
+                <th><i class="far fa-calendar-alt"></i> Date</th>
                 <td><%= family_person_give_item.give_day %></td>
               </tr>
               <% end %>
@@ -57,10 +57,10 @@
           <p>
             <%= link_to  family_persons_path, class: "btn btn-default rounded-pill" do %>
             <i class="fas fa-arrow-circle-left"></i>
-            <span>back</span>
+              Back
             <% end %>
             <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
-            <i class="fas fa-home"> home</i>
+            <i class="fas fa-home"></i> Home
             <% end %>
           </p>
         </div>

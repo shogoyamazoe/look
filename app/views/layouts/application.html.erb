@@ -21,7 +21,7 @@
 <header>
   <nav class="navbar navbar-light bg-light">
     <%= link_to root_path, class: "navbar-brand" do %>
-    <i class="far fa-handshake"> give & sent </i>
+    <i class="far fa-handshake"></i> GIVE & SENT
     <% end %>
     <%= search_form_for @first_search, url: search_give_items_path do |f| %>
     <%=f.search_field :product_or_give_person_give_person_or_family_person_family_person_or_reason_or_give_day_or_genre_genre_cont,class:"form-control ", placeholder: "GIVE ITEM キーワード"%>
@@ -57,11 +57,11 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <%= link_to new_user_session_path, class: "btn btn-secondary rounded-pill" do %>
-              <i class="fas fa-user-check">ログイン</i>
+              <i class="fas fa-user-check"></i> ログイン
               <% end %>
               <div class="mt-3">
                 <%= link_to new_user_registration_path, class: "btn btn-primary rounded-pill" do %>
-                <i class="fas fa-baby">新規登録</i>
+                <i class="fas fa-baby"></i> 新規登録
                 <% end %>
               </div>
             </li>
@@ -76,5 +76,4 @@
 <%= yield %>
 </body>
 <%= render "shared/footer" %>
-
 </html>

@@ -3,7 +3,7 @@
   <% if flash.now[:notice] %>
   <p class="notice"><%= flash.now[:notice] %></p>
   <% end %>
-  <i class="fa-solid fa-user fa-2x"> Presenter edit</i>
+  <i class="fa-solid fa-user fa-2x"></i> Presenter Edit
 </div>
 <div class="row">
   <div class="col mx-3">
@@ -11,7 +11,7 @@
       <%= form_with model: @give_person, local: true do |f| %>
       <tr>
         <div class="form-group">
-          <th style="width: 40%"><i class="fa-solid fa-user">　presenter</th>
+          <th style="width: 40%"><i class="fa-solid fa-user"></i> Presenter</th>
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
@@ -20,7 +20,7 @@
       </tr>
       <tr>
         <div class="form-group">
-          <th style="width: 40%"><i class="far fa-handshake"> Connection</i></th>
+          <th style="width: 40%"><i class="far fa-handshake"></i> Connection</th>
           <th style="width: 5%">
             <div class="badge badge-danger"> required</div>
           </th>
@@ -32,17 +32,16 @@
       <p class="mt-5">
         <%= link_to  give_persons_path, class: "btn btn-default rounded-pill" do %>
         <i class="fas fa-arrow-circle-left"></i>
-        <span>back</span>
+          Back
         <% end %>
         <%= f.button :type => "submit", class: "btn btn-primary rounded-pill" do %>
-        <i class="far fa-check-circle"> save</i>
+        <i class="far fa-check-circle"></i> Save
         <% end %>
         <%= link_to root_path, class: "btn btn-secondary rounded-pill" do %>
-        <i class="fas fa-home"> home</i>
+        <i class="fas fa-home"></i> Home
         <% end %>
       </p>
     </div>
     <% end %>
   </div>
-</div>
 </div>

@@ -2,33 +2,33 @@
   <div class="container">
     <div class="row">
       <div class="mx-auto" style="width: auto;">
-        <h1>Give & Sent</h1>
+        <h1> Give & Sent</h1>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="row justify-content-around">
       <%= link_to give_items_path, class: "btn btn-danger rounded-pill", method: :get do %>
-      <i class="fas fa-gift"> gift item</i>
+      <i class="fas fa-gift"></i> Gift Item
       <% end %>
       <%= link_to sent_items_path, class: "btn btn-info rounded-pill", method: :get do %>
-      <i class="fas fa-gift"> sent item</i>
+      <i class="fas fa-gift"></i> Sent Item
       <% end %>
     </div>
     <div class="row justify-content-around">
       <%= link_to give_persons_path, class: "btn btn-warning rounded-pill", method: :get do %>
-      <i class="fa-solid fa-people-group "> presenter </i>
+      <i class="fa-solid fa-people-group "></i> Presenter
       <% end %>
       <%= link_to sent_persons_path, class: "btn btn-secondary rounded-pill", method: :get do %>
-      <i class="fas fa-user-friends"> senter</i>
+      <i class="fas fa-user-friends"></i> Senter
       <% end %>
     </div>
     <div class="row justify-content-around">
       <%= link_to family_persons_path, class: "btn btn-success rounded-pill", method: :get do %>
-      <i class=" fa-solid fa-users"> family </i>
+      <i class=" fa-solid fa-users"></i> Family
       <% end %>
       <%= link_to genres_path, class: "btn btn-primary rounded-pill", method: :get do %>
-      <i class="fas fa-layer-group"> genre </i>
+      <i class="fas fa-layer-group "></i> Genre
       <% end %>
     </div>
   </div>
